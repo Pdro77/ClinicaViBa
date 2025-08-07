@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamientos - ViBa Clínica del Dolor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .page-header-bg {
+            background-image: url('https://placehold.co/1920x800/dbeafe/1e3a8a?text=Nuestros+Tratamientos');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 700;
+            line-height: 2.5rem; /* 40px */
+        }
+        .section-subtitle {
+            font-size: 1.25rem; /* 20px */
+            color: #4f46e5;
+            font-weight: 600;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Style for active nav link */
+        .nav-active {
+            color: #4f46e5;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-700">
+                ViBa <span class="font-light">Clínica del Dolor</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <!-- NOTE: Links would point to the main page sections or other pages -->
+                <a href="index.html#inicio" class="text-gray-600 hover:text-indigo-600 transition-colors">Inicio</a>
+                <a href="index.html#quienes-somos" class="text-gray-600 hover:text-indigo-600 transition-colors">Quiénes Somos</a>
+                <a href="#" class="nav-active transition-colors">Tratamientos</a>
+                <a href="index.html#blog" class="text-gray-600 hover:text-indigo-600 transition-colors">Blog</a>
+                <a href="index.html#contacto" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors shadow">Contactar</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu (for demonstration) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="index.html#inicio" class="block py-2 text-gray-600 hover:text-indigo-600">Inicio</a>
+            <a href="index.html#quienes-somos" class="block py-2 text-gray-600 hover:text-indigo-600">Quiénes Somos</a>
+            <a href="#" class="block py-2 nav-active">Tratamientos</a>
+            <a href="index.html#blog" class="block py-2 text-gray-600 hover:text-indigo-600">Blog</a>
+            <a href="index.html#contacto" class="block mt-2 bg-indigo-600 text-white text-center px-4 py-2 rounded-lg hover:bg-indigo-700 shadow">Contactar</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header-bg text-white">
+            <div class="bg-black bg-opacity-60 py-24 md:py-32">
+                <div class="container mx-auto px-6 text-center fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold">Tratamientos Innovadores</h1>
+                    <p class="text-lg md:text-xl mt-4 max-w-3xl mx-auto">Procedimientos de vanguardia para el alivio efectivo y duradero del dolor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment 1: Radiofrecuencia y Ozono -->
+        <section id="radiofrecuencia-ozono" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="section-subtitle">TECNOLOGÍA AVANZADA</h3>
+                    <h2 class="section-title text-gray-900">Radiofrecuencia y Ozonoterapia</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Radiofrecuencia</h3>
+                        <p class="text-gray-600 mb-4">La radiofrecuencia es una corriente eléctrica de uso médico que se utiliza para tratar múltiples causas de dolor crónico, como el dolor de espalda, cuello, hernias de disco, problemas en las articulaciones facetarias, lumbago, ciática, neuralgia del trigémino y dolor intratable en el talón. El objetivo es colocar una aguja sobre los nervios que transmiten el dolor para destruirlos e impedir la transmisión de la señal dolorosa.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                            <li><strong>Radiofrecuencia Convencional:</strong> Utiliza calor para crear una lesión controlada en el nervio, interrumpiendo la señal de dolor.</li>
+                            <li><strong>Radiofrecuencia Pulsada:</strong> Modula la función del nervio sin generar un aumento de temperatura significativo, alterando la transmisión del dolor.</li>
+                        </ul>
+                         <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Ozonoterapia</h3>
+                        <p class="text-gray-600 mb-4">Consiste en la aplicación de Ozono medicinal con fines terapéuticos. Es una terapia muy segura, sin efectos adversos y compatible con otros tratamientos. Sus principales efectos son analgésicos, antiinflamatorios, y una mejora notable en la microcirculación y oxigenación de los tejidos.</p>
+                        <p class="text-gray-600">Es ideal para tratar lumbago, ciática, espasmos musculares, hernias de disco, osteoartrosis de rodilla, fibromialgia y otros dolores agudos y crónicos.</p>
+                    </div>
+                    <div class="fade-in space-y-6">
+                        <img src="https://placehold.co/600x400/e0e7ff/3730a3?text=Radiofrecuencia+en+acción" alt="Procedimiento de Radiofrecuencia" class="rounded-lg shadow-xl w-full">
+                         <div class="aspect-w-16 aspect-h-9">
+                           <!-- El video de YouTube se puede incrustar aquí -->
+                           <iframe class="rounded-lg shadow-xl w-full h-full" src="https://www.youtube.com/embed/ftqsMGtS0W4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment 2: Hernias de Disco -->
+        <section id="hernias-disco" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="section-subtitle">ALTERNATIVA A LA CIRUGÍA</h3>
+                    <h2 class="section-title text-gray-900">Tratamiento Innovador para Hernias de Disco</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                     <div class="fade-in space-y-6 order-last md:order-first">
+                        <img src="https://placehold.co/600x400/e0e7ff/3730a3?text=Discectomía+Percutánea" alt="Procedimiento de Discectomía Percutánea" class="rounded-lg shadow-xl w-full">
+                         <div class="aspect-w-16 aspect-h-9">
+                           <iframe class="rounded-lg shadow-xl w-full h-full" src="https://www.youtube.com/embed/V0igcfFY7hg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="fade-in order-first md:order-last">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">¿Qué es una Hernia de Disco?</h3>
+                        <p class="text-gray-600 mb-4">Ocurre cuando el núcleo gelatinoso de un disco intervertebral se desplaza y comprime las raíces nerviosas. Esto puede ser causado por una lesión, un esfuerzo o el desgaste natural. Los síntomas incluyen dolor punzante, entumecimiento, ardor y debilidad en la zona afectada (piernas, brazos, cuello).</p>
+                        <p class="text-gray-600 mb-4">El dolor puede empeorar al estar de pie, sentado, por la noche, o con acciones simples como toser o reírse.</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-6 mb-4">Discectomía Percutánea</h3>
+                        <p class="text-gray-600 mb-4">Este es un procedimiento médico seguro e innovador que se realiza sin necesidad de cirugía abierta. Es una excelente alternativa que disminuye considerablemente el tiempo de recuperación de los pacientes.</p>
+                        <div class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-700 p-4 rounded-r-lg">
+                            <p class="font-bold">Procedimiento Mínimamente Invasivo</p>
+                            <p>Se realiza con anestesia local y sedación, guiado por Rayos X para máxima seguridad y exactitud, permitiendo una recuperación más rápida y efectiva.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment 3: Osteoporosis -->
+        <section id="osteoporosis" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="section-subtitle">PREVENCIÓN Y FORTALECIMIENTO</h3>
+                    <h2 class="section-title text-gray-900">Nuevo Tratamiento para la Osteoporosis</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Prevención de Fracturas de Cadera</h3>
+                        <p class="text-gray-600 mb-4">La osteoporosis es una enfermedad que vuelve los huesos frágiles y más propensos a fracturarse. Aproximadamente la mitad de todas las mujeres mayores de 50 años sufrirá una fractura de cadera, muñeca o columna. La causa principal es genética, pero factores como la falta de calcio, el tabaquismo y otras enfermedades aumentan el riesgo.</p>
+                        <p class="text-gray-600 mb-4">En ViBa Clínica del Dolor, realizamos un procedimiento médico de vanguardia para <strong>prevenir las fracturas de cadera</strong>. Consiste en la introducción de un cemento especial de uso médico en la zona donde es más frecuente que ocurra la fractura, fortaleciendo el hueso desde adentro.</p>
+                        <ul class="space-y-3 mt-6">
+                            <li class="flex items-start"><i data-lucide="shield-check" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0"></i><span>Procedimiento seguro con un alto margen de éxito para reforzar la estructura ósea.</span></li>
+                            <li class="flex items-start"><i data-lucide="shield-check" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0"></i><span>Es guiado por Rayos X en tiempo real para asegurar una colocación precisa del cemento.</span></li>
+                            <li class="flex items-start"><i data-lucide="shield-check" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0"></i><span>No requiere anestesia general, lo que facilita y acelera la recuperación del paciente.</span></li>
+                        </ul>
+                    </div>
+                    <div class="fade-in">
+                        <img src="https://placehold.co/600x400/e0e7ff/3730a3?text=Prevención+de+Fracturas" alt="Prevención de fracturas por osteoporosis" class="rounded-lg shadow-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bg-indigo-700 text-white">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h2 class="text-3xl font-bold mb-4">¿Listo para dar el primer paso hacia una vida sin dolor?</h2>
+                <p class="max-w-2xl mx-auto mb-8">Nuestro equipo está listo para evaluar tu caso y ofrecerte el tratamiento más adecuado. Contáctanos hoy mismo.</p>
+                <a href="index.html#contacto" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-200 transition-transform transform hover:scale-105">Agendar una Cita</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">ViBa Clínica del Dolor</h3>
+                    <p class="text-gray-400">Mejorando la calidad de vida de nuestros pacientes a través de un tratamiento del dolor humano y especializado.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#quienes-somos" class="text-gray-400 hover:text-white">Quiénes Somos</a></li>
+                        <li><a href="#" class="text-white">Tratamientos</a></li>
+                        <li><a href="index.html#blog" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="index.html#contacto" class="text-gray-400 hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Síguenos</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500">
+                <p>&copy; 2024 ViBa Clínica de Tratamiento del Dolor. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
