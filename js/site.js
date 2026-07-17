@@ -1,9 +1,6 @@
 // ViBa Clínica del Dolor — shared behavior for index.html and tratamientos.html
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Icons
-    if (window.lucide) lucide.createIcons();
-
     // Footer copyright year
     const yearEl = document.getElementById('current-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -29,7 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth scroll for in-page anchors (links to other pages pass through untouched)
+    // Smooth scroll for in-page anchors (links to other pages pass through untouched).
+    // Respects prefers-reduced-motion and moves keyboard focus to the target
+    // so Tab continues from the destination instead of the top of the page.
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
@@ -43,7 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     mobileMenuButton.setAttribute('aria-label', 'Abrir menú');
                 }
             }
-            target.scrollIntoView({ behavior: 'smooth' });
+            target.scrollIntoView({ behavior: prefersReducedMotion.matches ? 'auto' : 'smooth' });
+            if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
         });
     });
 
@@ -111,7 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateHeaderState, { passive: true });
     }
 
-    // Scroll-reveal: animate .reveal elements in as they enter the viewport
+    // Scroll-reveal: animate .reveal elements in as they enter the viewport.
+    // Elements already inside the viewport on load are revealed immediately so
+    // above-the-fold content never depends on the observer firing.
     const revealTargets = document.querySelectorAll('.reveal');
     if (revealTargets.length) {
         if ('IntersectionObserver' in window) {
@@ -123,7 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-            revealTargets.forEach((el) => observer.observe(el));
+            revealTargets.forEach((el) => {
+                if (el.getBoundingClientRect().top < window.innerHeight) {
+                    el.classList.add('is-visible');
+                } else {
+                    observer.observe(el);
+                }
+            });
         } else {
             revealTargets.forEach((el) => el.classList.add('is-visible'));
         }

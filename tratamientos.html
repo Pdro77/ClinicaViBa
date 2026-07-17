@@ -3,44 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tratamientos | ViBa Clínica del Dolor</title>
+    <title>Tratamientos para el Dolor en Quetzaltenango | ViBa Clínica del Dolor</title>
     <meta name="description" content="Conoce en detalle nuestros tratamientos: Radiofrecuencia y Ozonoterapia, tratamiento innovador para Hernias de Disco y prevención de fracturas por Osteoporosis.">
+    <link rel="canonical" href="https://clinicaviba.com/tratamientos.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_GT">
+    <meta property="og:site_name" content="ViBa Clínica de Tratamiento del Dolor">
+    <meta property="og:title" content="Tratamientos para el Dolor | ViBa Clínica del Dolor">
+    <meta property="og:description" content="Radiofrecuencia, ozonoterapia, discectomía percutánea para hernias de disco y prevención de fracturas por osteoporosis en Quetzaltenango.">
+    <meta property="og:url" content="https://clinicaviba.com/tratamientos.html">
+    <meta property="og:image" content="https://clinicaviba.com/media/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="preload" as="image" href="media/cov12-hero.webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        primary: { DEFAULT: '#5B21B6', light: '#7C3AED', soft: '#8B5CF6', dark: '#3B0764' },
-                        ink: { DEFAULT: '#1C1425', soft: '#4B4155' },
-                        beige: { 50: '#FBF7F0', 100: '#F3EAD8' },
-                        lavender: { 50: '#F5F3FF' },
-                        gold: '#B7862C',
-                    },
-                },
-            },
-        };
-    </script>
     <style>
         .page-header-bg {
-            background-image: url('media/cov12.JPG');
+            background-image: url('media/cov12-hero.webp');
             background-size: cover;
             background-position: center;
         }
     </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        "name": "Tratamientos para el Dolor | ViBa Clínica del Dolor",
+        "url": "https://clinicaviba.com/tratamientos.html",
+        "inLanguage": "es",
+        "about": [
+            { "@type": "MedicalProcedure", "name": "Radiofrecuencia" },
+            { "@type": "MedicalProcedure", "name": "Ozonoterapia" },
+            { "@type": "MedicalProcedure", "name": "Discectomía Percutánea" },
+            { "@type": "MedicalProcedure", "name": "Prevención de fracturas por osteoporosis" }
+        ],
+        "provider": { "@id": "https://clinicaviba.com/#clinica" },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://clinicaviba.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Tratamientos", "item": "https://clinicaviba.com/tratamientos.html" }
+            ]
+        }
+    }
+    </script>
 </head>
 <body class="bg-white text-ink-soft">
 
@@ -50,25 +66,25 @@
     <header id="header" class="bg-white sticky top-0 z-50 transition-shadow duration-300">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="index.html#inicio" class="flex items-center text-xl font-bold text-ink font-serif">
-                <img src="media/logo Fondo transparente con contorno.png" alt="Logo ViBa" class="h-12 mr-3" />
+                <img src="media/logo.webp" alt="Logo ViBa" class="h-12 mr-3" width="135" height="96" />
                 ViBa <span class="font-normal ml-1 text-ink-soft hidden sm:inline">Clínica de Tratamiento del Dolor</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="index.html#inicio" class="text-ink-soft hover:text-primary transition-colors">Inicio</a>
                 <a href="index.html#quienes-somos" class="text-ink-soft hover:text-primary transition-colors">Quiénes Somos</a>
-                <a href="tratamientos.html" class="text-primary font-semibold transition-colors">Tratamientos</a>
+                <a href="tratamientos.html" class="text-primary font-semibold transition-colors" aria-current="page">Tratamientos</a>
                 <a href="index.html#blog" class="text-ink-soft hover:text-primary transition-colors">Blog</a>
                 <a href="index.html#contacto" class="bg-primary text-white px-5 py-2 rounded-full hover:bg-primary-light transition-colors shadow font-semibold">Contactar</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
-                <i data-lucide="menu" class="w-6 h-6 text-ink"></i>
+            <button id="mobile-menu-button" class="md:hidden flex items-center justify-center w-11 h-11 -mr-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
             </button>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4 border-t border-[var(--color-border)]">
             <a href="index.html#inicio" class="block py-2 text-ink-soft hover:text-primary">Inicio</a>
             <a href="index.html#quienes-somos" class="block py-2 text-ink-soft hover:text-primary">Quiénes Somos</a>
-            <a href="tratamientos.html" class="block py-2 text-primary font-semibold">Tratamientos</a>
+            <a href="tratamientos.html" class="block py-2 text-primary font-semibold" aria-current="page">Tratamientos</a>
             <a href="index.html#blog" class="block py-2 text-ink-soft hover:text-primary">Blog</a>
             <a href="index.html#contacto" class="block mt-2 bg-primary text-white text-center px-4 py-2 rounded-full hover:bg-primary-light shadow font-semibold">Contactar</a>
         </div>
@@ -88,11 +104,12 @@
         </section>
 
         <!-- Quick nav -->
-        <nav class="bg-lavender-50 border-b border-[var(--color-border)]">
+        <nav class="bg-lavender-50 border-b border-[var(--color-border)]" aria-label="Secciones de tratamientos">
             <div class="container mx-auto px-6 py-4 flex flex-wrap justify-center gap-3">
                 <a href="#radiofrecuencia-ozono" class="text-sm font-semibold text-primary bg-white px-4 py-2 rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">Radiofrecuencia y Ozono</a>
                 <a href="#hernias-disco" class="text-sm font-semibold text-primary bg-white px-4 py-2 rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">Hernias de Disco</a>
                 <a href="#osteoporosis" class="text-sm font-semibold text-primary bg-white px-4 py-2 rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">Osteoporosis</a>
+                <a href="#otras-condiciones" class="text-sm font-semibold text-primary bg-white px-4 py-2 rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">Otras Condiciones</a>
             </div>
         </nav>
 
@@ -106,7 +123,8 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="reveal">
                         <h3 class="text-2xl font-bold text-ink mb-4 font-serif">Radiofrecuencia</h3>
-                        <p class="text-ink-soft mb-4">La radiofrecuencia es una corriente eléctrica de uso médico que se utiliza para tratar múltiples causas de dolor crónico, como el dolor de espalda, cuello, hernias de disco, problemas en las articulaciones facetarias, lumbago, ciática, neuralgia del trigémino y dolor intratable en el talón. El objetivo es colocar una aguja sobre los nervios que transmiten el dolor para destruirlos e impedir la transmisión de la señal dolorosa.</p>
+                        <p class="text-ink-soft mb-4">La radiofrecuencia es una corriente eléctrica de uso médico que se utiliza para tratar múltiples causas de dolor crónico, como el dolor de espalda, cuello, hernias de disco, problemas en las articulaciones facetarias, lumbago, ciática, neuralgia del trigémino y dolor intratable en el talón. Mediante una aguja fina colocada con precisión, se interrumpe de forma controlada la transmisión de la señal dolorosa en el nervio responsable.</p>
+                        <p class="text-ink-soft mb-4">Es un procedimiento ambulatorio: se realiza con anestesia local, guiado por Rayos X en tiempo real, y la mayoría de los pacientes regresa a casa el mismo día.</p>
                         <ul class="list-disc list-inside space-y-2 text-ink-soft mb-6">
                             <li><strong class="text-ink">Radiofrecuencia Convencional:</strong> Utiliza calor para crear una lesión controlada en el nervio, interrumpiendo la señal de dolor.</li>
                             <li><strong class="text-ink">Radiofrecuencia Pulsada:</strong> Modula la función del nervio sin generar un aumento de temperatura significativo, alterando la transmisión del dolor.</li>
@@ -116,9 +134,9 @@
                         <p class="text-ink-soft">Es ideal para tratar lumbago, ciática, espasmos musculares, hernias de disco, osteoartrosis de rodilla, fibromialgia y otros dolores agudos y crónicos.</p>
                     </div>
                     <div class="reveal space-y-6">
-                        <img src="media/1.webp" alt="Procedimiento de Radiofrecuencia" class="rounded-2xl shadow-xl w-full" loading="lazy" width="600" height="400">
-                         <div class="aspect-w-16 aspect-h-9">
-                           <iframe class="rounded-2xl shadow-xl w-full h-full" width="560" height="315" src="https://www.youtube-nocookie.com/embed/ftqsMGtS0W4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                        <img src="media/1.webp" alt="Procedimiento de Radiofrecuencia" class="rounded-2xl shadow-xl w-full" loading="lazy" width="280" height="280">
+                         <div class="video-frame">
+                           <iframe class="rounded-2xl shadow-xl" src="https://www.youtube-nocookie.com/embed/ftqsMGtS0W4" title="Video: Radiofrecuencia y Ozonoterapia en ViBa Clínica del Dolor" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -134,9 +152,9 @@
                 </div>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                      <div class="reveal space-y-6 order-last md:order-first">
-                        <img src="media/hernia discal 3.webp" alt="Procedimiento de Discectomía Percutánea" class="rounded-2xl shadow-xl w-full" loading="lazy" width="600" height="400">
-                         <div class="aspect-w-16 aspect-h-9">
-                           <iframe class="rounded-2xl shadow-xl w-full h-full" width="560" height="315" src="https://www.youtube.com/embed/V0igcfFY7hg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                        <img src="media/hernia-discal-3.webp" alt="Procedimiento de Discectomía Percutánea" class="rounded-2xl shadow-xl w-full" loading="lazy" width="805" height="447">
+                         <div class="video-frame">
+                           <iframe class="rounded-2xl shadow-xl" src="https://www.youtube-nocookie.com/embed/V0igcfFY7hg" title="Video: Tratamiento de hernias de disco en ViBa Clínica del Dolor" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
                         </div>
                     </div>
                     <div class="reveal order-first md:order-last">
@@ -145,7 +163,7 @@
                         <p class="text-ink-soft mb-4">El dolor puede empeorar al estar de pie, sentado, por la noche, o con acciones simples como toser o reírse.</p>
                         <h3 class="text-2xl font-bold text-ink mt-6 mb-4 font-serif">Discectomía Percutánea</h3>
                         <p class="text-ink-soft mb-4">Este es un procedimiento médico seguro e innovador que se realiza sin necesidad de cirugía abierta. Es una excelente alternativa que disminuye considerablemente el tiempo de recuperación de los pacientes.</p>
-                        <div class="bg-lavender-50 border-l-4 border-primary text-ink p-4 rounded-r-lg">
+                        <div class="bg-lavender-50 border border-[var(--color-border)] text-ink p-5 rounded-xl">
                             <p class="font-bold text-primary">Procedimiento Mínimamente Invasivo</p>
                             <p class="text-ink-soft">Se realiza con anestesia local y sedación, guiado por Rayos X para máxima seguridad y exactitud, permitiendo una recuperación más rápida y efectiva.</p>
                         </div>
@@ -167,13 +185,47 @@
                         <p class="text-ink-soft mb-4">La osteoporosis es una enfermedad que vuelve los huesos frágiles y más propensos a fracturarse. Aproximadamente la mitad de todas las mujeres mayores de 50 años sufrirá una fractura de cadera, muñeca o columna. La causa principal es genética, pero factores como la falta de calcio, el tabaquismo y otras enfermedades aumentan el riesgo.</p>
                         <p class="text-ink-soft mb-4">En ViBa Clínica del Dolor, realizamos un procedimiento médico de vanguardia para <strong class="text-ink">prevenir las fracturas de cadera</strong>. Consiste en la introducción de un cemento especial de uso médico en la zona donde es más frecuente que ocurra la fractura, fortaleciendo el hueso desde adentro.</p>
                         <ul class="space-y-3 mt-6">
-                            <li class="flex items-start"><i data-lucide="shield-check" class="w-6 h-6 text-primary mr-3 flex-shrink-0"></i><span>Procedimiento seguro con un alto margen de éxito para reforzar la estructura ósea.</span></li>
-                            <li class="flex items-start"><i data-lucide="shield-check" class="w-6 h-6 text-primary mr-3 flex-shrink-0"></i><span>Es guiado por Rayos X en tiempo real para asegurar una colocación precisa del cemento.</span></li>
-                            <li class="flex items-start"><i data-lucide="shield-check" class="w-6 h-6 text-primary mr-3 flex-shrink-0"></i><span>No requiere anestesia general, lo que facilita y acelera la recuperación del paciente.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-primary mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Procedimiento seguro con un alto margen de éxito para reforzar la estructura ósea.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-primary mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Es guiado por Rayos X en tiempo real para asegurar una colocación precisa del cemento.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-primary mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>No requiere anestesia general, lo que facilita y acelera la recuperación del paciente.</span></li>
                         </ul>
                     </div>
                     <div class="reveal">
-                        <img src="media/fracturas por Osteoporosis.webp" alt="Prevención de fracturas por osteoporosis" class="rounded-2xl shadow-xl w-full" loading="lazy">
+                        <img src="media/fracturas-osteoporosis.webp" alt="Prevención de fracturas por osteoporosis" class="rounded-2xl shadow-xl w-full" loading="lazy" width="1000" height="568">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras condiciones -->
+        <section id="otras-condiciones" class="py-16 md:py-24 bg-beige-50 scroll-mt-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal">
+                    <p class="section-subtitle">ATENCIÓN INTEGRAL<span class="eyebrow-rule"></span></p>
+                    <h2 class="section-title mt-2">Otras Condiciones que Tratamos</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-ink-soft">Cada paciente recibe una evaluación personalizada para definir el plan de tratamiento más adecuado a su condición.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="reveal bg-white rounded-2xl p-8 shadow-md">
+                        <div class="w-14 h-14 mb-4 rounded-full bg-lavender-50 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-ink mb-3 font-serif">Fibromialgia</h3>
+                        <p class="text-ink-soft">Condición que causa dolor generalizado en músculos y articulaciones, fatiga y alteraciones del sueño. Ofrecemos un manejo integral que combina terapias como la ozonoterapia con un plan personalizado para reducir el dolor y recuperar la funcionalidad diaria.</p>
+                    </div>
+                    <div class="reveal bg-white rounded-2xl p-8 shadow-md">
+                        <div class="w-14 h-14 mb-4 rounded-full bg-lavender-50 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-ink mb-3 font-serif">Neuropatías</h3>
+                        <p class="text-ink-soft">El daño en los nervios —como en la neuropatía diabética o la neuralgia posterior al Herpes Zóster— produce ardor, hormigueo y dolor punzante. Tratamos estas condiciones con radiofrecuencia y terapias especializadas que modulan la señal dolorosa del nervio afectado.</p>
+                    </div>
+                    <div class="reveal bg-white rounded-2xl p-8 shadow-md">
+                        <div class="w-14 h-14 mb-4 rounded-full bg-lavender-50 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-ink mb-3 font-serif">Dolor por Cáncer</h3>
+                        <p class="text-ink-soft">El dolor oncológico requiere un manejo especializado y compasivo. Brindamos cuidados paliativos enfocados en aliviar el dolor y mejorar la calidad de vida del paciente y su familia, en coordinación con su equipo médico tratante.</p>
                     </div>
                 </div>
             </div>
@@ -184,7 +236,16 @@
             <div class="container mx-auto px-6 py-16 text-center reveal">
                 <h2 class="text-3xl font-bold mb-4 font-serif">¿Listo para dar el primer paso hacia una vida sin dolor?</h2>
                 <p class="max-w-2xl mx-auto mb-8 text-white/90">Nuestro equipo está listo para evaluar tu caso y ofrecerte el tratamiento más adecuado. Contáctanos hoy mismo.</p>
-                <a href="index.html#contacto" class="bg-white text-primary font-bold py-3 px-8 rounded-full text-lg hover:bg-beige-50 transition-transform transform hover:scale-105 shadow-lg inline-block">Agendar una Cita</a>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://wa.me/50240135131?text=Hola%2C%20quisiera%20agendar%20una%20cita%20en%20ViBa%20Cl%C3%ADnica%20del%20Dolor." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white text-primary font-bold py-3 px-8 rounded-full text-lg hover:bg-beige-50 transition-transform transform hover:scale-105 shadow-lg">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        Agendar por WhatsApp
+                    </a>
+                    <a href="tel:+50277673308" class="inline-flex items-center gap-2 border border-white/40 text-white font-semibold py-3 px-8 rounded-full text-lg hover:bg-white/10 transition-colors">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+                        Llamar (502) 7767-3308
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -195,7 +256,7 @@
         <div class="container mx-auto px-6 py-12">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4 font-serif">ViBa Clínica del Dolor</h3>
+                    <h3 class="text-xl font-bold mb-4 font-serif">ViBa Clínica de Tratamiento del Dolor</h3>
                     <p class="text-white/60">Mejorando la calidad de vida de nuestros pacientes a través de un tratamiento del dolor humano y especializado.</p>
                 </div>
                 <div>
@@ -203,7 +264,7 @@
                     <ul class="space-y-2">
                         <li><a href="index.html#inicio" class="text-white/60 hover:text-white transition-colors">Inicio</a></li>
                         <li><a href="index.html#quienes-somos" class="text-white/60 hover:text-white transition-colors">Quiénes Somos</a></li>
-                        <li><a href="tratamientos.html" class="text-white">Tratamientos</a></li>
+                        <li><a href="tratamientos.html" class="text-white" aria-current="page">Tratamientos</a></li>
                         <li><a href="index.html#blog" class="text-white/60 hover:text-white transition-colors">Blog</a></li>
                         <li><a href="index.html#contacto" class="text-white/60 hover:text-white transition-colors">Contacto</a></li>
                     </ul>
@@ -211,16 +272,21 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4 font-serif">Síguenos</h3>
                     <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/vibasindolor" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/60 hover:text-white transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
-                        <a href="https://www.instagram.com/clinicaviba/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/60 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="https://www.facebook.com/vibasindolor" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/60 hover:text-white transition-colors"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+                        <a href="https://www.instagram.com/clinicaviba/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/60 hover:text-white transition-colors"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
                     </div>
                 </div>
             </div>
-            <div class="mt-12 border-t border-white/10 pt-8 text-center text-white/40">
+            <div class="mt-12 border-t border-white/10 pt-8 text-center text-white/60">
                 <p>&copy; <span id="current-year">2026</span> ViBa Clínica de Tratamiento del Dolor. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp button -->
+    <a href="https://wa.me/50240135131?text=Hola%2C%20quisiera%20agendar%20una%20cita%20en%20ViBa%20Cl%C3%ADnica%20del%20Dolor." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Agendar cita por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
 
     <script src="js/site.js" defer></script>
 </body>

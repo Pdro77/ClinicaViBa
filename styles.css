@@ -48,14 +48,14 @@ h1, h2, h3, .font-serif {
 }
 
 /* Scroll-reveal: elements start hidden and animate in once visible.
-   Replaces the old fade-in keyframe, which fired once on page load and
-   never triggered again for content below the fold. */
-.reveal {
+   Hidden state is gated on html.js (set by an inline script in <head>)
+   so that with JavaScript disabled or failed, all content stays visible. */
+html.js .reveal {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal.is-visible {
+html.js .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -64,11 +64,18 @@ h1, h2, h3, .font-serif {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .reveal {
+    html.js .reveal {
         opacity: 1;
         transform: none;
         transition: none;
     }
+}
+
+/* Visible keyboard focus outside the form fields (nav links, buttons, cards) */
+:where(a, button):focus-visible {
+    outline: 3px solid var(--color-primary-light);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 /* Skip-to-content link: visually hidden until keyboard focus */
@@ -102,6 +109,51 @@ h1, h2, h3, .font-serif {
     font-weight: 600;
     padding: 0.5rem 0.9rem;
     border-radius: 999px;
+}
+
+/* Floating WhatsApp button: persistent shortcut to the main booking channel */
+.whatsapp-float {
+    position: fixed;
+    right: 1.25rem;
+    bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    background: #25D366;
+    color: #fff;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.06);
+    box-shadow: 0 14px 30px -5px rgba(0, 0, 0, 0.4);
+}
+.whatsapp-float svg {
+    width: 1.9rem;
+    height: 1.9rem;
+    fill: currentColor;
+}
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-float,
+    .whatsapp-float:hover {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* 16:9 frame for embedded videos (replaces the aspect-w/aspect-h plugin classes) */
+.video-frame {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+.video-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* Gold divider rule under eyebrow labels */

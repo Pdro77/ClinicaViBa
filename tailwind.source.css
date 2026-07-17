@@ -1,0 +1,21 @@
+/* Source for the static Tailwind build (replaces the Play CDN).
+   Rebuild after markup changes:
+     npx @tailwindcss/cli -i tailwind.source.css -o tailwind.css --minify
+   (run from this directory; it scans the HTML/JS files automatically) */
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+
+    --color-primary: #5B21B6;
+    --color-primary-light: #7C3AED;
+    --color-primary-soft: #8B5CF6;
+    --color-primary-dark: #3B0764;
+    --color-ink: #1C1425;
+    --color-ink-soft: #4B4155;
+    --color-beige-50: #FBF7F0;
+    --color-beige-100: #F3EAD8;
+    --color-lavender-50: #F5F3FF;
+    --color-gold: #B7862C;
+}
