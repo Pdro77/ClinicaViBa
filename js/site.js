@@ -4,12 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Icons
     if (window.lucide) lucide.createIcons();
 
+    // Footer copyright year
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     // Mobile menu toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isOpen = mobileMenu.classList.toggle('hidden') === false;
+            mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+            mobileMenuButton.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+        });
+
+        // Escape key closes the mobile menu and returns focus to the toggle
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                mobileMenuButton.setAttribute('aria-label', 'Abrir menú');
+                mobileMenuButton.focus();
+            }
         });
     }
 
@@ -20,10 +36,70 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(targetId);
             if (!target) return;
             e.preventDefault();
-            if (mobileMenu) mobileMenu.classList.add('hidden');
+            if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+                if (mobileMenuButton) {
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenuButton.setAttribute('aria-label', 'Abrir menú');
+                }
+            }
             target.scrollIntoView({ behavior: 'smooth' });
         });
     });
+
+    // Contact form: submit via fetch so we can show inline pending/success/error states
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        const submitButton = document.getElementById('contact-submit-button');
+        const submitLabel = submitButton ? submitButton.querySelector('.submit-label') : null;
+        const status = document.getElementById('contact-form-status');
+        const defaultLabel = submitLabel ? submitLabel.textContent : '';
+
+        const setStatus = (message, kind) => {
+            if (!status) return;
+            status.textContent = message;
+            status.classList.remove('is-success', 'is-error');
+            if (kind) {
+                status.classList.add(kind === 'success' ? 'is-success' : 'is-error');
+                status.classList.add('is-visible');
+            } else {
+                status.classList.remove('is-visible');
+            }
+        };
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.classList.add('is-loading');
+            }
+            if (submitLabel) submitLabel.textContent = 'Enviando...';
+            setStatus('', null);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { Accept: 'application/json' },
+                });
+
+                if (response.ok) {
+                    setStatus('Recibimos tu mensaje. Te contactaremos dentro de las próximas 24 horas.', 'success');
+                    contactForm.reset();
+                } else {
+                    setStatus('No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos por WhatsApp al (502) 4013-5131.', 'error');
+                }
+            } catch (err) {
+                setStatus('No pudimos enviar tu mensaje. Revisa tu conexión o escríbenos por WhatsApp al (502) 4013-5131.', 'error');
+            } finally {
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('is-loading');
+                }
+                if (submitLabel) submitLabel.textContent = defaultLabel;
+            }
+        });
+    }
 
     // Header shadow once the page scrolls past the top
     const header = document.getElementById('header');

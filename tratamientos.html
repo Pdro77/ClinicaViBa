@@ -44,6 +44,8 @@
 </head>
 <body class="bg-white text-ink-soft">
 
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <!-- Header & Navigation -->
     <header id="header" class="bg-white sticky top-0 z-50 transition-shadow duration-300">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
@@ -58,7 +60,7 @@
                 <a href="index.html#blog" class="text-ink-soft hover:text-primary transition-colors">Blog</a>
                 <a href="index.html#contacto" class="bg-primary text-white px-5 py-2 rounded-full hover:bg-primary-light transition-colors shadow font-semibold">Contactar</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden">
+            <button id="mobile-menu-button" class="md:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                 <i data-lucide="menu" class="w-6 h-6 text-ink"></i>
             </button>
         </div>
@@ -72,13 +74,13 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Page Header -->
         <section class="relative text-white overflow-hidden page-header-bg">
             <div class="absolute inset-0 bg-gradient-to-br from-ink/90 via-primary-dark/75 to-primary/40"></div>
             <div class="relative py-24 md:py-32">
                 <div class="container mx-auto px-6 text-center reveal">
-                    <h3 class="section-subtitle text-white/80 mb-3">NUESTROS PROCEDIMIENTOS</h3>
+                    <p class="section-subtitle text-white/80 mb-3">NUESTROS PROCEDIMIENTOS</p>
                     <h1 class="text-4xl md:text-6xl font-bold font-serif">Tratamientos Innovadores</h1>
                     <p class="text-lg md:text-xl mt-4 max-w-3xl mx-auto text-white/90">Procedimientos de vanguardia para el alivio efectivo y duradero del dolor.</p>
                 </div>
@@ -98,7 +100,7 @@
         <section id="radiofrecuencia-ozono" class="py-16 md:py-24 bg-white scroll-mt-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 reveal">
-                    <h3 class="section-subtitle">TECNOLOGÍA AVANZADA<span class="eyebrow-rule"></span></h3>
+                    <p class="section-subtitle">TECNOLOGÍA AVANZADA<span class="eyebrow-rule"></span></p>
                     <h2 class="section-title mt-2">Radiofrecuencia y Ozonoterapia</h2>
                 </div>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -127,7 +129,7 @@
         <section id="hernias-disco" class="py-16 md:py-24 bg-beige-50 scroll-mt-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 reveal">
-                    <h3 class="section-subtitle">ALTERNATIVA A LA CIRUGÍA<span class="eyebrow-rule"></span></h3>
+                    <p class="section-subtitle">ALTERNATIVA A LA CIRUGÍA<span class="eyebrow-rule"></span></p>
                     <h2 class="section-title mt-2">Tratamiento Innovador para Hernias de Disco</h2>
                 </div>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -156,7 +158,7 @@
         <section id="osteoporosis" class="py-16 md:py-24 bg-white scroll-mt-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 reveal">
-                    <h3 class="section-subtitle">PREVENCIÓN Y FORTALECIMIENTO<span class="eyebrow-rule"></span></h3>
+                    <p class="section-subtitle">PREVENCIÓN Y FORTALECIMIENTO<span class="eyebrow-rule"></span></p>
                     <h2 class="section-title mt-2">Nuevo Tratamiento para la Osteoporosis</h2>
                 </div>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -209,13 +211,13 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4 font-serif">Síguenos</h3>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-white/60 hover:text-white transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
-                        <a href="#" class="text-white/60 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="https://www.facebook.com/vibasindolor" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/60 hover:text-white transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="https://www.instagram.com/clinicaviba/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/60 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
                     </div>
                 </div>
             </div>
             <div class="mt-12 border-t border-white/10 pt-8 text-center text-white/40">
-                <p>&copy; 2024 ViBa Clínica de Tratamiento del Dolor. Todos los derechos reservados.</p>
+                <p>&copy; <span id="current-year">2026</span> ViBa Clínica de Tratamiento del Dolor. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
