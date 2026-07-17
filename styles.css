@@ -1,0 +1,99 @@
+/* ==========================================================================
+   ViBa Clínica del Dolor — design tokens & shared styles
+   Shared by index.html and tratamientos.html (Tailwind Play CDN + this file)
+   ========================================================================== */
+
+:root {
+    --color-primary: #5B21B6;       /* violet-800 — brand purple */
+    --color-primary-light: #7C3AED; /* violet-600 — hover / links */
+    --color-primary-soft: #8B5CF6;  /* violet-500 — icon accents */
+    --color-primary-dark: #3B0764;  /* violet-950 — gradients on dark */
+    --color-lavender-50: #F5F3FF;   /* tinted section background */
+    --color-beige-50: #FBF7F0;      /* warm alternate section background */
+    --color-beige-100: #F3EAD8;     /* deeper beige for cards / borders */
+    --color-ink: #1C1425;           /* near-black, purple-tinted — headings, footer */
+    --color-ink-soft: #4B4155;      /* muted purple-tinted body copy */
+    --color-gold: #B7862C;          /* sparing premium accent */
+    --color-border: #E7DFF5;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-ink-soft);
+}
+
+h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--color-ink);
+}
+
+.section-subtitle {
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    color: var(--color-primary-light);
+    font-weight: 600;
+}
+
+/* Header: subtle elevation once the page has scrolled past the hero */
+#header.is-scrolled {
+    box-shadow: 0 4px 20px -4px rgba(28, 20, 37, 0.15);
+}
+
+/* Scroll-reveal: elements start hidden and animate in once visible.
+   Replaces the old fade-in keyframe, which fired once on page load and
+   never triggered again for content below the fold. */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-stagger.is-visible > * {
+    transition-delay: calc(var(--reveal-index, 0) * 90ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Trust badge chip used in the hero and treatment teasers */
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+}
+
+/* Gold divider rule under eyebrow labels */
+.eyebrow-rule {
+    display: block;
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-gold);
+    margin: 0.5rem auto 0;
+}
+.eyebrow-rule.align-left {
+    margin: 0.5rem 0 0;
+}
