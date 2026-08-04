@@ -43,6 +43,13 @@ h1, h2, h3, .font-serif {
     font-weight: 600;
 }
 
+/* Cabecera de la página de tratamientos (generada por build-pages.mjs) */
+.page-header-bg {
+    background-image: url('media/cov12-hero.webp');
+    background-size: cover;
+    background-position: center;
+}
+
 /* Header: subtle elevation once the page has scrolled past the hero */
 #header.is-scrolled {
     box-shadow: 0 4px 20px -4px rgba(28, 20, 37, 0.15);
