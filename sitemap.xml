@@ -46,13 +46,37 @@
         <loc>https://clinicaviba.com/dolor-por-cancer.html</loc>
         <lastmod>2026-08-05</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://clinicaviba.com/tratamientos.html</loc>
         <lastmod>2026-08-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://clinicaviba.com/blog-cuidados-paliativos.html</loc>
+        <lastmod>2026-08-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://clinicaviba.com/blog-que-es-un-algologo.html</loc>
+        <lastmod>2026-08-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://clinicaviba.com/blog-especialista-columna.html</loc>
+        <lastmod>2026-08-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://clinicaviba.com/blog.html</loc>
+        <lastmod>2026-08-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://clinicaviba.com/blog-espalda-saludable.html</loc>

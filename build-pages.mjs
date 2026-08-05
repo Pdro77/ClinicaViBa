@@ -49,7 +49,7 @@ const navLinks = (active) => {
     item('index.html#inicio', 'Inicio', 'inicio'),
     item('index.html#quienes-somos', 'Quiénes Somos', 'quienes'),
     item('tratamientos.html', 'Tratamientos', 'tratamientos'),
-    item('index.html#blog', 'Blog', 'blog'),
+    item('blog.html', 'Blog', 'blog'),
   ].join('\n                ');
 };
 
@@ -62,7 +62,7 @@ const mobileNavLinks = (active) => {
     item('index.html#inicio', 'Inicio', 'inicio'),
     item('index.html#quienes-somos', 'Quiénes Somos', 'quienes'),
     item('tratamientos.html', 'Tratamientos', 'tratamientos'),
-    item('index.html#blog', 'Blog', 'blog'),
+    item('blog.html', 'Blog', 'blog'),
   ].join('\n            ');
 };
 
@@ -227,6 +227,59 @@ const breadcrumbLd = (slug, name) => ({
     { '@type': 'ListItem', position: 2, name: 'Tratamientos', item: `${SITE}/tratamientos.html` },
     { '@type': 'ListItem', position: 3, name, item: `${SITE}/${slug}` },
   ],
+});
+
+/** Cuerpo de un artículo del blog, con el mismo layout que los ya existentes. */
+const articleBody = ({ categoria, h1, fecha, fechaLegible, img, imgAlt, imgW, imgH, contenido, ctaTitulo, ctaTexto, waMsg, sigueLeyendo }) => `        <article class="py-12 md:py-16">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <nav class="text-sm mb-6" aria-label="Ruta de navegación">
+                    <a href="index.html" class="text-primary hover:text-primary-light font-semibold inline-block py-2">Inicio</a>
+                    <span class="mx-2 text-ink-soft">/</span>
+                    <a href="blog.html" class="text-primary hover:text-primary-light font-semibold inline-block py-2">Blog</a>
+                    <span class="mx-2 text-ink-soft">/</span>
+                    <span class="text-ink-soft">${categoria}</span>
+                </nav>
+                <p class="inline-block text-xs font-semibold text-primary bg-lavender-50 rounded-full px-3 py-1 mb-4">${categoria}</p>
+                <h1 class="text-3xl md:text-4xl font-bold text-ink font-serif mb-4">${h1}</h1>
+                <p class="text-sm text-ink-soft mb-8">Publicado por el equipo de ViBa Clínica de Tratamiento del Dolor · <time datetime="${fecha}">${fechaLegible}</time></p>
+${img ? `                <img src="${img}" alt="${imgAlt}" class="rounded-2xl shadow-lg w-full mb-10" width="${imgW}" height="${imgH}">\n` : ''}
+                <div class="space-y-5 text-ink-soft leading-relaxed">
+${contenido}
+
+                    <div class="bg-lavender-50 border border-[var(--color-border)] rounded-xl p-5 mt-8">
+                        <p class="text-sm text-ink-soft"><strong class="text-ink">Nota:</strong> este artículo es informativo y no sustituye una consulta médica. Cada caso debe ser evaluado individualmente por un especialista.</p>
+                    </div>
+                </div>
+
+                <div class="bg-beige-50 rounded-2xl p-8 mt-12 text-center">
+                    <h2 class="text-2xl font-bold text-ink font-serif mb-3">${ctaTitulo}</h2>
+                    <p class="text-ink-soft mb-6">${ctaTexto}</p>
+                    <a href="${waLink(waMsg)}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-primary-light transition-colors shadow-lg">
+                        ${waIcon('w-5 h-5')}
+                        Agendar Cita por WhatsApp
+                    </a>
+                </div>
+
+                <div class="mt-10">
+                    <h2 class="text-lg font-bold text-ink mb-4 font-serif">Sigue leyendo</h2>
+                    <ul class="space-y-2">
+${sigueLeyendo.map(([h, l]) => `                        <li><a href="${h}" class="text-primary hover:text-primary-light font-semibold inline-block py-2">${l} &rarr;</a></li>`).join('\n')}
+                    </ul>
+                </div>
+            </div>
+        </article>`;
+
+const articleLd = (slug, headline, description, image, fecha) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline,
+  description,
+  image: `${SITE}/${image}`,
+  url: `${SITE}/${slug}`,
+  datePublished: fecha,
+  inLanguage: 'es',
+  author: { '@type': 'Organization', name: 'ViBa Clínica de Tratamiento del Dolor', url: `${SITE}/` },
+  publisher: { '@id': `${SITE}/#clinica` },
 });
 
 // =====================================================================
@@ -919,6 +972,221 @@ ${cta(
 });
 
 // =====================================================================
+//  Artículos del blog
+//  Temas elegidos a partir del informe de búsquedas del Perfil de Empresa:
+//  "cuidados paliativos" (85 búsquedas, el término dominante con diferencia),
+//  "algologo quetzaltenango", "columna" y "dr de columna".
+// =====================================================================
+
+const FECHA = '2026-08-05';
+const FECHA_LEGIBLE = '5 de agosto de 2026';
+
+const articulos = [
+  {
+    slug: 'blog-cuidados-paliativos.html',
+    categoria: 'Cuidados Paliativos',
+    title: 'Cuidados Paliativos: Qué Son y Cuándo se Necesitan | ViBa Xela',
+    description: 'Qué son los cuidados paliativos, a quién están dirigidos y por qué no son solo para el final de la vida. Atención en Quetzaltenango (Xela).',
+    h1: 'Cuidados Paliativos: Qué Son y Cuándo se Necesitan',
+    ogImage: 'media/og-cover.jpg',
+    contenido: `                    <p>Pocas expresiones en medicina generan tanto malentendido como "cuidados paliativos". Muchas familias los asocian únicamente con el final de la vida, y por eso los rechazan o los posponen. La realidad es distinta, y entenderla puede cambiar por completo la experiencia de una enfermedad grave.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">¿Qué son realmente?</h2>
+                    <p>Los cuidados paliativos son la atención médica especializada que se enfoca en <strong class="text-ink">aliviar el dolor y los síntomas</strong> de una enfermedad seria, y en mejorar la calidad de vida del paciente y de su familia. No tratan de curar la enfermedad: se ocupan de que la persona viva ese proceso con el menor sufrimiento posible.</p>
+                    <p>Trabajan sobre lo que la enfermedad provoca en el día a día: dolor, náuseas, falta de aire, agotamiento, insomnio, ansiedad. Todo aquello que, sin atención, convierte cada jornada en una carga.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">El malentendido más frecuente</h2>
+                    <p><strong class="text-ink">Los cuidados paliativos no son solo para los últimos días.</strong> Pueden y suelen iniciarse desde el momento del diagnóstico, en paralelo con el tratamiento que busca curar la enfermedad. Un paciente puede estar recibiendo quimioterapia y, al mismo tiempo, atención paliativa para el dolor.</p>
+                    <p>De hecho, empezar temprano suele traducirse en mejor control de los síntomas y mayor capacidad para tolerar el tratamiento principal. Esperar "hasta que ya no haya nada más que hacer" es precisamente lo que conviene evitar.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">¿Quién puede beneficiarse?</h2>
+                    <p>Aunque se asocian sobre todo al cáncer, los cuidados paliativos aplican a cualquier enfermedad grave y prolongada que curse con dolor o síntomas difíciles de controlar. El criterio no es el diagnóstico ni el pronóstico: es <strong class="text-ink">el sufrimiento que la enfermedad está causando</strong>.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">La familia también forma parte</h2>
+                    <p>Una enfermedad grave no la atraviesa solo el paciente. Los cuidados paliativos contemplan también a quienes acompañan: orientación sobre qué esperar, cómo administrar la medicación en casa y cómo reconocer cuándo hace falta consultar. Una familia informada cuida mejor y se desgasta menos.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">Nuestro papel</h2>
+                    <p>En ViBa Clínica de Tratamiento del Dolor brindamos cuidados paliativos enfocados en aliviar el dolor y mejorar la calidad de vida del paciente y su familia, <strong class="text-ink">siempre en coordinación con su equipo médico tratante</strong>. No sustituimos al oncólogo ni al médico que lleva el caso: trabajamos junto a él para que el tratamiento sea más llevadero.</p>
+                    <p>Cuando la medicación por sí sola no logra controlar el dolor, contamos además con procedimientos especializados para el control del dolor que pueden marcar una diferencia importante.</p>`,
+    ctaTitulo: '¿Un familiar tiene dolor que no está controlado?',
+    ctaTexto: 'Escríbenos y te orientamos sobre las opciones disponibles para su caso, en coordinación con su médico tratante.',
+    waMsg: 'Hola, quisiera información sobre cuidados paliativos en ViBa Clínica de Tratamiento del Dolor.',
+    sigueLeyendo: [
+      ['dolor-por-cancer.html', 'Manejo del dolor por cáncer y cuidados paliativos'],
+      ['blog-que-es-un-algologo.html', '¿Qué es un algólogo? El médico especialista en dolor'],
+      ['blog-que-es-el-dolor.html', '¿Qué es el dolor y cómo se clasifica?'],
+    ],
+  },
+  {
+    slug: 'blog-que-es-un-algologo.html',
+    categoria: 'Educación',
+    title: '¿Qué es un Algólogo? El Médico Especialista en Dolor | ViBa Xela',
+    description: 'Un algólogo es el médico especializado en el diagnóstico y tratamiento del dolor. Te explicamos qué hace, en qué se diferencia y cuándo acudir. En Xela.',
+    h1: '¿Qué es un Algólogo? El Médico Especialista en Dolor',
+    ogImage: 'media/dr-800.webp',
+    img: 'media/dr-800.webp',
+    imgAlt: 'Dr. Otto R. Villagrán Quiñonez, especialista en Medicina del Dolor',
+    imgW: 800,
+    imgH: 800,
+    contenido: `                    <p>Si llevas meses yendo de un médico a otro sin que tu dolor mejore, es posible que te falte consultar a una especialidad que muchos pacientes desconocen: la algología.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">Algología: la medicina del dolor</h2>
+                    <p>La algología —también llamada <strong class="text-ink">medicina del dolor</strong>— es la sub-especialidad médica dedicada al diagnóstico y tratamiento del dolor, especialmente el dolor crónico. Un algólogo es un médico que, después de su especialidad, se formó específicamente en entender por qué duele y cómo detenerlo.</p>
+                    <p>La diferencia de enfoque es importante. Para la mayoría de las especialidades, el dolor es un síntoma que apunta hacia una enfermedad. Para el algólogo, cuando ese dolor se vuelve crónico, <strong class="text-ink">el dolor mismo es la enfermedad a tratar</strong>.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">¿En qué se diferencia de otros especialistas?</h2>
+                    <p>No compite con ellos: los complementa. El traumatólogo se ocupa de la lesión ósea o articular; el neurólogo, de la enfermedad del sistema nervioso; el fisiatra, de la rehabilitación funcional. El algólogo entra cuando el dolor persiste <strong class="text-ink">a pesar</strong> de que esos abordajes ya se intentaron, o cuando su intensidad exige un manejo especializado desde el inicio.</p>
+                    <p>Su herramienta distintiva son los procedimientos intervencionistas: técnicas como la radiofrecuencia o los bloqueos, que actúan directamente sobre el nervio que transmite la señal dolorosa, guiados por imagen para llegar con precisión al punto exacto.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">¿Cuándo acudir a un algólogo?</h2>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Tu dolor lleva más de tres meses y no ha cedido con el tratamiento habitual.</li>
+                        <li>Ya consultaste a otros especialistas sin obtener alivio duradero.</li>
+                        <li>Dependes cada vez más de analgésicos para poder funcionar.</li>
+                        <li>El dolor te impide trabajar, dormir o hacer tu vida normal.</li>
+                        <li>Tienes dolor de tipo neuropático: ardor, hormigueo o corrientes eléctricas.</li>
+                        <li>Atraviesas una enfermedad grave y el dolor no está bien controlado.</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">Algología en Quetzaltenango</h2>
+                    <p>El Dr. Otto R. Villagrán Quiñonez, director médico de ViBa, cuenta con <strong class="text-ink">sub-especialidad en Algología por la Universidad de Buenos Aires</strong>. La clínica atiende en Quetzaltenango (Xela) a pacientes con dolor agudo y crónico que no ha sido aliviado con atención médica de rutina.</p>`,
+    ctaTitulo: '¿Tu dolor lleva meses sin respuesta?',
+    ctaTexto: 'Una evaluación con un especialista en dolor puede identificar el origen exacto del problema y abrir opciones que no habías considerado.',
+    waMsg: 'Hola, quisiera agendar una consulta con el especialista en dolor de ViBa Clínica de Tratamiento del Dolor.',
+    sigueLeyendo: [
+      ['blog-que-es-el-dolor.html', '¿Qué es el dolor y cómo se clasifica?'],
+      ['tratamientos.html', 'Ver todos nuestros tratamientos'],
+      ['blog-especialista-columna.html', '¿Cuándo consultar a un especialista en columna?'],
+    ],
+  },
+  {
+    slug: 'blog-especialista-columna.html',
+    categoria: 'Consejos de Vida',
+    title: '¿Cuándo Consultar a un Especialista en Columna? | ViBa Xela',
+    description: 'Señales de alarma del dolor de columna: cuándo deja de ser normal y conviene consultar a un especialista. Atención en Quetzaltenango (Xela).',
+    h1: '¿Cuándo Consultar a un Especialista en Columna?',
+    ogImage: 'media/dolor-de-espalda.jpg',
+    img: 'media/dolor-de-espalda.jpg',
+    imgAlt: 'Persona con dolor de columna en su rutina diaria',
+    imgW: 1280,
+    imgH: 720,
+    contenido: `                    <p>Casi todos tendremos dolor de espalda alguna vez, y la mayoría de las veces se resuelve solo en unas semanas. El problema es que esa misma normalidad hace que muchas personas <strong class="text-ink">normalicen también el dolor que ya no es normal</strong>, y lleguen a consultar cuando el cuadro lleva años instalado.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">Señales de que conviene consultar</h2>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong class="text-ink">El dolor supera las 6 semanas</strong> sin mejorar, pese al reposo y los analgésicos.</li>
+                        <li><strong class="text-ink">Baja hacia la pierna o el brazo</strong>, más allá de la espalda o el cuello.</li>
+                        <li>Aparece <strong class="text-ink">hormigueo, entumecimiento o debilidad</strong> en una extremidad.</li>
+                        <li><strong class="text-ink">Te despierta por la noche</strong> o no encuentras postura para descansar.</li>
+                        <li>Necesitas <strong class="text-ink">cada vez más analgésicos</strong> para el mismo alivio.</li>
+                        <li>Te impide trabajar, conducir o hacer tus actividades habituales.</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">Señales que requieren atención urgente</h2>
+                    <p>Hay síntomas que no admiten espera y obligan a buscar atención médica de inmediato: pérdida de control de esfínteres, debilidad que progresa rápidamente en las piernas, adormecimiento en la zona de la entrepierna, o dolor de espalda acompañado de fiebre o de pérdida de peso sin explicación.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">Qué puede haber detrás</h2>
+                    <p>El dolor de columna persistente tiene muchas causas posibles: una <a href="hernia-de-disco.html" class="text-primary font-semibold hover:underline">hernia de disco</a> que comprime una raíz nerviosa, el desgaste de las articulaciones facetarias, <a href="lumbalgia-ciatica.html" class="text-primary font-semibold hover:underline">lumbalgia y ciática</a>, estrechamiento del canal por donde pasan los nervios, o dolor de origen muscular mantenido en el tiempo.</p>
+                    <p>Identificar cuál de todas es la responsable es justamente el objetivo de la consulta especializada: <strong class="text-ink">tratamientos distintos para causas distintas</strong>.</p>
+
+                    <h2 class="text-2xl font-bold text-ink font-serif pt-4">Qué esperar de la consulta</h2>
+                    <p>Una evaluación especializada combina tu historia clínica, una exploración física y la revisión de tus estudios de imagen. Con eso se establece el origen del dolor y se define el plan: desde manejo conservador hasta procedimientos mínimamente invasivos como la radiofrecuencia o la ozonoterapia.</p>
+                    <p>Un consejo práctico: <strong class="text-ink">lleva tus estudios previos</strong> (radiografías, resonancias, tomografías) a la primera cita, aunque tengan algunos años. Ahorran tiempo y evitan repetir exámenes.</p>`,
+    ctaTitulo: '¿Tu dolor de columna ya pasó de las 6 semanas?',
+    ctaTexto: 'Trae tus estudios y evaluaremos el origen exacto del dolor y las opciones de tratamiento para tu caso.',
+    waMsg: 'Hola, tengo dolor de columna y quisiera agendar una evaluación en ViBa Clínica de Tratamiento del Dolor.',
+    sigueLeyendo: [
+      ['lumbalgia-ciatica.html', 'Tratamiento de lumbalgia y ciática'],
+      ['hernia-de-disco.html', 'Tratamiento de hernia de disco sin cirugía'],
+      ['blog-espalda-saludable.html', '10 recomendaciones para una espalda saludable'],
+    ],
+  },
+];
+
+for (const a of articulos) {
+  pages.push({
+    slug: a.slug,
+    title: a.title,
+    description: a.description,
+    ogImage: a.ogImage,
+    active: 'blog',
+    priority: '0.7',
+    changefreq: 'yearly',
+    jsonLd: articleLd(a.slug, a.h1, a.description, a.ogImage, FECHA),
+    body: articleBody({ ...a, fecha: FECHA, fechaLegible: FECHA_LEGIBLE }),
+  });
+}
+
+// =====================================================================
+//  Índice del blog
+// =====================================================================
+
+const todosLosArticulos = [
+  { href: 'blog-cuidados-paliativos.html', cat: 'Cuidados Paliativos', t: 'Cuidados Paliativos: Qué Son y Cuándo se Necesitan', d: 'No son solo para el final de la vida. Qué son realmente, a quién ayudan y por qué conviene empezar temprano.', img: 'media/og-cover.jpg', w: 1200, h: 630, fecha: FECHA, fl: FECHA_LEGIBLE },
+  { href: 'blog-que-es-un-algologo.html', cat: 'Educación', t: '¿Qué es un Algólogo? El Médico Especialista en Dolor', d: 'La especialidad que muchos pacientes con dolor crónico desconocen, y cuándo conviene acudir a ella.', img: 'media/dr-800.webp', w: 800, h: 800, fecha: FECHA, fl: FECHA_LEGIBLE },
+  { href: 'blog-especialista-columna.html', cat: 'Consejos de Vida', t: '¿Cuándo Consultar a un Especialista en Columna?', d: 'Las señales que distinguen un dolor de espalda pasajero de uno que necesita evaluación especializada.', img: 'media/dolor-de-espalda.jpg', w: 1280, h: 720, fecha: FECHA, fl: FECHA_LEGIBLE },
+  { href: 'blog-espalda-saludable.html', cat: 'Consejos de Vida', t: '10 Recomendaciones para una Espalda Saludable', d: 'Pequeños cambios en tu rutina diaria pueden hacer una gran diferencia. Aprende a cuidar tu espalda.', img: 'media/dolor-de-espalda.jpg', w: 1280, h: 720, fecha: '2026-07-17', fl: '17 de julio de 2026' },
+  { href: 'blog-que-es-el-dolor.html', cat: 'Educación', t: '¿Qué es el Dolor y Cómo se Clasifica?', d: 'El dolor es más que una sensación. Su definición, tipos y por qué es una señal de alerta.', img: 'media/facetas-1.jpg', w: 268, h: 188, fecha: '2026-07-17', fl: '17 de julio de 2026' },
+  { href: 'blog-discectomia-percutanea.html', cat: 'Tratamientos Innovadores', t: 'Discectomía Percutánea: Una Alternativa a la Cirugía', d: 'Cómo este procedimiento mínimamente invasivo trata hernias de disco sin cirugía abierta.', img: 'media/hernia-discal-3.webp', w: 805, h: 447, fecha: '2026-07-17', fl: '17 de julio de 2026' },
+];
+
+pages.push({
+  slug: 'blog.html',
+  title: 'Blog de Salud y Tratamiento del Dolor | ViBa Clínica, Xela',
+  description: 'Artículos sobre dolor crónico, cuidados paliativos, columna y tratamientos, escritos por el equipo de ViBa Clínica de Tratamiento del Dolor en Xela.',
+  active: 'blog',
+  priority: '0.7',
+  changefreq: 'monthly',
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'Blog', name: 'Blog de ViBa Clínica de Tratamiento del Dolor', url: `${SITE}/blog.html`, inLanguage: 'es', publisher: { '@id': `${SITE}/#clinica` } },
+      {
+        '@type': 'ItemList',
+        itemListElement: todosLosArticulos.map((a, i) => ({ '@type': 'ListItem', position: i + 1, name: a.t, url: `${SITE}/${a.href}` })),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog.html` },
+        ],
+      },
+    ],
+  },
+  body: `        <section class="bg-gradient-to-br from-ink via-primary-dark to-primary text-white">
+            <div class="container mx-auto px-6 py-14 md:py-20 text-center">
+                <p class="section-subtitle text-white/80 mb-3">BLOG INFORMATIVO</p>
+                <h1 class="text-3xl md:text-5xl font-bold font-serif mb-4">Artículos y Consejos de Salud</h1>
+                <p class="text-lg text-white/90 max-w-2xl mx-auto">Información clara sobre el dolor crónico y su tratamiento, escrita por nuestro equipo médico.</p>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 bg-beige-50">
+            <div class="container mx-auto px-6">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+${todosLosArticulos.map((a) => `                    <a href="${a.href}" class="reveal group flex flex-col bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <img src="${a.img}" alt="${a.t}" class="w-full h-44 object-cover" loading="lazy" width="${a.w}" height="${a.h}">
+                        <div class="p-6 flex flex-col flex-1">
+                            <p class="inline-block self-start text-xs font-semibold text-primary bg-lavender-50 rounded-full px-3 py-1 mb-3">${a.cat}</p>
+                            <h2 class="text-lg font-bold text-ink mb-2 font-serif">${a.t}</h2>
+                            <p class="text-ink-soft text-sm mb-4 flex-1">${a.d}</p>
+                            <time datetime="${a.fecha}" class="text-xs text-ink-soft mb-2">${a.fl}</time>
+                            <span class="inline-flex items-center font-semibold text-primary group-hover:text-primary-light">Leer artículo ${icon(SVG_ARROW, 'w-4 h-4 ml-1')}</span>
+                        </div>
+                    </a>`).join('\n')}
+                </div>
+            </div>
+        </section>
+
+${cta(
+  '¿Tienes dudas sobre tu caso?',
+  'Ningún artículo sustituye una evaluación. Escríbenos y te orientamos sobre tu situación concreta.',
+  'Hola, quisiera agendar una cita en ViBa Clínica de Tratamiento del Dolor.'
+)}`,
+});
+
+// =====================================================================
 //  Escritura
 // =====================================================================
 
@@ -939,17 +1207,14 @@ const hoy = new Date().toISOString().slice(0, 10);
 
 const sitemapEntries = [
   { loc: '', priority: '1.0', changefreq: 'monthly' },
-  ...pages
-    .filter((p) => p.slug !== 'tratamientos.html')
-    .map((p) => ({ loc: p.slug, priority: '0.8', changefreq: 'monthly' })),
-  { loc: 'tratamientos.html', priority: '0.9', changefreq: 'monthly' },
+  ...pages.map((p) => ({ loc: p.slug, priority: p.priority || '0.8', changefreq: p.changefreq || 'monthly' })),
   { loc: 'blog-espalda-saludable.html', priority: '0.6', changefreq: 'yearly' },
   { loc: 'blog-que-es-el-dolor.html', priority: '0.6', changefreq: 'yearly' },
   { loc: 'blog-discectomia-percutanea.html', priority: '0.6', changefreq: 'yearly' },
 ];
 
-// Prioridad más alta para las páginas con mayor demanda de búsqueda.
-const prioridadAlta = new Set(['hernia-de-disco.html', 'radiofrecuencia-ozonoterapia.html', 'lumbalgia-ciatica.html']);
+// Prioridad según la demanda real observada en el informe de búsquedas.
+const prioridadAlta = new Set(['hernia-de-disco.html', 'radiofrecuencia-ozonoterapia.html', 'lumbalgia-ciatica.html', 'tratamientos.html', 'dolor-por-cancer.html', 'blog-cuidados-paliativos.html']);
 for (const e of sitemapEntries) if (prioridadAlta.has(e.loc)) e.priority = '0.9';
 
 // Conserva el lastmod anterior de las URLs que no se tocaron en esta corrida.
