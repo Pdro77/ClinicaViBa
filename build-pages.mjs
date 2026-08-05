@@ -139,19 +139,19 @@ ${body}
                 <div>
                     <h3 class="text-xl font-bold mb-4 font-serif">Tratamientos</h3>
                     <ul class="space-y-2">
-                        <li><a href="hernia-de-disco.html" class="text-white/60 hover:text-white transition-colors inline-block py-1">Hernia de Disco</a></li>
-                        <li><a href="radiofrecuencia-ozonoterapia.html" class="text-white/60 hover:text-white transition-colors inline-block py-1">Radiofrecuencia y Ozono</a></li>
-                        <li><a href="lumbalgia-ciatica.html" class="text-white/60 hover:text-white transition-colors inline-block py-1">Lumbalgia y Ciática</a></li>
-                        <li><a href="osteoporosis.html" class="text-white/60 hover:text-white transition-colors inline-block py-1">Osteoporosis</a></li>
-                        <li><a href="tratamientos.html" class="text-white/60 hover:text-white transition-colors inline-block py-1">Ver todos</a></li>
+                        <li><a href="hernia-de-disco.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Hernia de Disco</a></li>
+                        <li><a href="radiofrecuencia-ozonoterapia.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Radiofrecuencia y Ozono</a></li>
+                        <li><a href="lumbalgia-ciatica.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Lumbalgia y Ciática</a></li>
+                        <li><a href="osteoporosis.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Osteoporosis</a></li>
+                        <li><a href="tratamientos.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Ver todos</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold mb-4 font-serif">Contacto</h3>
                     <ul class="space-y-2">
-                        <li><a href="${WA_DEFAULT}" target="_blank" rel="noopener" class="text-white/60 hover:text-white transition-colors inline-block py-1">WhatsApp (502) 4013-5131</a></li>
-                        <li><a href="tel:${TEL}" class="text-white/60 hover:text-white transition-colors inline-block py-1">Tel. ${TEL_DISPLAY}</a></li>
-                        <li><a href="index.html#contacto" class="text-white/60 hover:text-white transition-colors inline-block py-1">Ubicación y horarios</a></li>
+                        <li><a href="${WA_DEFAULT}" target="_blank" rel="noopener" class="text-white/60 hover:text-white transition-colors inline-block py-2">WhatsApp (502) 4013-5131</a></li>
+                        <li><a href="tel:${TEL}" class="text-white/60 hover:text-white transition-colors inline-block py-2">Tel. ${TEL_DISPLAY}</a></li>
+                        <li><a href="index.html#contacto" class="text-white/60 hover:text-white transition-colors inline-block py-2">Ubicación y horarios</a></li>
                     </ul>
                     <div class="flex space-x-4 mt-4">
                         <a href="https://www.facebook.com/vibasindolor" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/60 hover:text-white transition-colors inline-flex p-2 -m-2"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${SVG_FB}</svg></a>

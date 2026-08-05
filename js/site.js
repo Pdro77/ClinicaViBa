@@ -134,6 +134,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     observer.observe(el);
                 }
             });
+
+            // Red de seguridad: si el observador no llegara a dispararse (por
+            // ejemplo en un navegador que no compone la página), el scroll revela
+            // igualmente lo que entra en pantalla. El contenido nunca queda oculto.
+            let pendiente = false;
+            const revelarVisibles = () => {
+                pendiente = false;
+                let quedan = 0;
+                revealTargets.forEach((el) => {
+                    if (el.classList.contains('is-visible')) return;
+                    quedan++;
+                    if (el.getBoundingClientRect().top < window.innerHeight) {
+                        el.classList.add('is-visible');
+                        observer.unobserve(el);
+                    }
+                });
+                if (!quedan) window.removeEventListener('scroll', alHacerScroll);
+            };
+            const alHacerScroll = () => {
+                if (pendiente) return;
+                pendiente = true;
+                window.requestAnimationFrame(revelarVisibles);
+            };
+            window.addEventListener('scroll', alHacerScroll, { passive: true });
         } else {
             revealTargets.forEach((el) => el.classList.add('is-visible'));
         }
