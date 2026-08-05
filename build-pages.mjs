@@ -519,7 +519,7 @@ pages.push({
   title: 'Medicina Regenerativa: PRP y Células Madre en Quetzaltenango (Xela) | ViBa',
   description: 'Plasma Rico en Plaquetas (PRP) y Células Madre de Médula Ósea (BMAC) para columna, rodilla, hombro y tendones en Quetzaltenango (Xela). Sin cirugía.',
   ogImage: 'media/regenerativa-2.webp',
-  preloadImage: 'media/regenerativa-prp.svg',
+  preloadImage: 'media/regenerativa-1.webp',
   jsonLd: {
     '@context': 'https://schema.org',
     '@graph': [
@@ -565,7 +565,7 @@ pages.push({
                         <p class="text-ink-soft">Se aplica en discos de la columna vertebral, cartílagos articulares, huesos fracturados, tendones, ligamentos y músculos, promoviendo una regeneración profunda en zonas de desgaste severo.</p>
                     </div>
                     <div class="reveal space-y-6">
-                        <img src="media/regenerativa-prp.svg" alt="Ilustración del proceso de Plasma Rico en Plaquetas (PRP): tubo centrifugado en capas, aplicado en una articulación" class="rounded-2xl shadow-xl w-full" width="1200" height="675">
+                        <img src="media/regenerativa-1.webp" alt="Ilustración médica de regeneración articular con células madre" class="rounded-2xl shadow-xl w-full" width="1200" height="675">
                         <img src="media/regenerativa-2.webp" alt="Infiltración guiada por imagen en la articulación de la rodilla" class="rounded-2xl shadow-xl w-full" width="1200" height="800">
                     </div>
                 </div>
@@ -994,7 +994,7 @@ const hubCards = [
     href: 'medicina-regenerativa.html',
     titulo: 'Medicina Regenerativa',
     texto: 'PRP y Células Madre de tu propio cuerpo para reparar discos, cartílagos, tendones y ligamentos. Sin riesgo de rechazo, sin cirugía.',
-    img: 'media/regenerativa-prp.svg',
+    img: 'media/regenerativa-1.webp',
     w: 1200,
     h: 675,
   },
