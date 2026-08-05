@@ -140,9 +140,9 @@ ${body}
                     <h3 class="text-xl font-bold mb-4 font-serif">Tratamientos</h3>
                     <ul class="space-y-2">
                         <li><a href="hernia-de-disco.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Hernia de Disco</a></li>
+                        <li><a href="medicina-regenerativa.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Medicina Regenerativa</a></li>
                         <li><a href="radiofrecuencia-ozonoterapia.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Radiofrecuencia y Ozono</a></li>
                         <li><a href="lumbalgia-ciatica.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Lumbalgia y Ciática</a></li>
-                        <li><a href="osteoporosis.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Osteoporosis</a></li>
                         <li><a href="tratamientos.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Ver todos</a></li>
                     </ul>
                 </div>
@@ -367,9 +367,9 @@ ${cta(
 
 ${relacionados([
   ['hernia-de-disco.html', 'Tratamiento de hernia de disco sin cirugía'],
+  ['medicina-regenerativa.html', 'Medicina Regenerativa: PRP y Células Madre'],
   ['lumbalgia-ciatica.html', 'Lumbalgia y ciática'],
   ['neuropatias.html', 'Neuropatías: trigémino, herpes zóster y diabética'],
-  ['fibromialgia.html', 'Fibromialgia'],
 ])}`,
 });
 
@@ -391,6 +391,14 @@ pages.push({
         howPerformed: 'A través de una punción en la piel se introduce una cánula delgada hasta el disco afectado, guiada por Rayos X en tiempo real, para retirar o reducir la porción del disco que comprime la raíz nerviosa.',
         preparation: 'Evaluación con el especialista y estudios de imagen que confirmen la hernia.',
         followup: 'Procedimiento ambulatorio con anestesia local y sedación; la mayoría de los pacientes regresa a casa el mismo día.',
+        availableService: { '@id': `${SITE}/#clinica` },
+        url: `${SITE}/hernia-de-disco.html`,
+      },
+      {
+        '@type': 'MedicalTherapy',
+        name: 'Enfoque triple para hernias discales (Radiofrecuencia, Ozonoterapia y Medicina Regenerativa)',
+        bodyLocation: 'Disco intervertebral',
+        howPerformed: 'Combina radiofrecuencia para interrumpir la señal de dolor, ozonoterapia para reducir el tamaño de la hernia, y Plasma Rico en Plaquetas o Células Madre de Médula Ósea para reparar el disco dañado. Guiado por ultrasonido o fluoroscopía (Rayos X).',
         availableService: { '@id': `${SITE}/#clinica` },
         url: `${SITE}/hernia-de-disco.html`,
       },
@@ -452,17 +460,157 @@ pages.push({
             </div>
         </section>
 
+        <section class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl reveal">
+                <p class="section-subtitle">TECNOLOGÍA DE VANGUARDIA<span class="eyebrow-rule"></span></p>
+                <h2 class="section-title mt-2 mb-6">Nuestro Enfoque Triple para Hernias Discales</h2>
+                <p class="text-ink-soft mb-4">Si te han dicho que la cirugía es tu única opción para una hernia discal, en ViBa combinamos tres tecnologías mínimamente invasivas que atacan el problema desde ángulos distintos: apagan el dolor, reducen la hernia y reparan el disco dañado.</p>
+
+                <div class="grid sm:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-beige-50 rounded-2xl p-6">
+                        <p class="font-bold text-primary mb-2">1. Radiofrecuencia</p>
+                        <p class="text-ink-soft text-sm">Ondas de alta frecuencia dirigidas con precisión milimétrica hacia los nervios que transmiten la señal de dolor. "Apaga" el dolor crónico en poco tiempo, dándole a tu cuerpo el respiro que necesita para iniciar su curación.</p>
+                    </div>
+                    <div class="bg-beige-50 rounded-2xl p-6">
+                        <p class="font-bold text-primary mb-2">2. Ozonoterapia Discal</p>
+                        <p class="text-ink-soft text-sm">Un potente gas antiinflamatorio y antioxidante que se inyecta directamente en la zona afectada. Deshidrata suavemente el material de la hernia, reduciendo su tamaño para que deje de presionar el nervio.</p>
+                    </div>
+                    <div class="bg-beige-50 rounded-2xl p-6">
+                        <p class="font-bold text-primary mb-2">3. Medicina Regenerativa</p>
+                        <p class="text-ink-soft text-sm">Plasma Rico en Plaquetas o Células Madre extraídas de tu propia médula ósea. Mientras el ozono reduce la hernia y la radiofrecuencia frena el dolor, repara y fortalece el disco dañado, estimulando la cicatrización para evitar que la hernia vuelva a salir.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-ink mt-10 mb-4 font-serif">Por qué este tratamiento combinado es superior</h3>
+                ${checkList([
+                  '<strong class="text-ink">Guiado por imágenes de alta precisión</strong>: todos los procedimientos se realizan con guía por ultrasonido o fluoroscopía (Rayos X), viendo exactamente dónde se aplica cada tratamiento.',
+                  '<strong class="text-ink">Sin bisturí ni cicatrices</strong>: se realiza con agujas finas especiales. No se corta músculo ni se altera la estructura ósea de la columna.',
+                  '<strong class="text-ink">Sin los riesgos de la cirugía abierta</strong>: evita las fibrosis postquirúrgicas (cicatrices internas que a veces duelen más que la propia hernia) y los largos meses de recuperación.',
+                  'El paciente entra y sale caminando el mismo día, con anestesia local y sedación suave.',
+                ])}
+
+                <h3 class="text-2xl font-bold text-ink mt-10 mb-4 font-serif">Otras condiciones de columna que tratamos con este enfoque</h3>
+                <ul class="list-disc list-inside space-y-2 text-ink-soft mb-4">
+                    <li><strong class="text-ink">Discopatía degenerativa:</strong> estimulamos la regeneración e hidratación del disco intervertebral desgastado.</li>
+                    <li><strong class="text-ink">Artrosis facetaria:</strong> aliviamos el dolor y regeneramos las pequeñas articulaciones que unen las vértebras, con radiofrecuencia y medicina regenerativa.</li>
+                    <li><strong class="text-ink">Dolor lumbar crónico y contracturas severas:</strong> regeneramos los ligamentos y tendones que sostienen la columna.</li>
+                </ul>
+                <p class="text-ink-soft">Este protocolo integral es ideal si tienes diagnóstico confirmado de hernia lumbar o cervical, dolor que se corre hacia la pierna (ciática) o el brazo, no has mejorado con terapia física ni medicamentos, o deseas evitar una cirugía de fijación o fusión de columna. Trae tus estudios recientes (resonancia magnética y/o radiografías) y evaluaremos si eres candidato. Conoce más sobre la <a href="medicina-regenerativa.html" class="text-primary font-semibold hover:underline">Medicina Regenerativa con PRP y Células Madre</a> que usamos en este enfoque.</p>
+            </div>
+        </section>
+
 ${cta(
   '¿Te diagnosticaron una hernia de disco?',
-  'Trae tus estudios y evaluaremos si la discectomía percutánea u otro tratamiento mínimamente invasivo es la mejor opción para ti.',
+  'Trae tus estudios y evaluaremos si la discectomía percutánea, el enfoque combinado con medicina regenerativa, u otro tratamiento mínimamente invasivo es la mejor opción para ti.',
   'Hola, me diagnosticaron una hernia de disco y quisiera agendar una evaluación en ViBa Clínica de Tratamiento del Dolor.'
 )}
 
 ${relacionados([
+  ['medicina-regenerativa.html', 'Medicina Regenerativa: PRP y Células Madre'],
   ['blog-discectomia-percutanea.html', 'Artículo: Discectomía percutánea, una alternativa a la cirugía'],
   ['lumbalgia-ciatica.html', 'Lumbalgia y ciática'],
   ['radiofrecuencia-ozonoterapia.html', 'Radiofrecuencia y ozonoterapia'],
-  ['blog-espalda-saludable.html', 'Artículo: 10 recomendaciones para una espalda saludable'],
+])}`,
+});
+
+// --- 2b. Medicina Regenerativa (PRP y Células Madre) ---
+pages.push({
+  slug: 'medicina-regenerativa.html',
+  title: 'Medicina Regenerativa: PRP y Células Madre en Quetzaltenango (Xela) | ViBa',
+  description: 'Plasma Rico en Plaquetas (PRP) y Células Madre de Médula Ósea (BMAC) para columna, rodilla, hombro y tendones en Quetzaltenango (Xela). Sin cirugía.',
+  ogImage: 'media/regenerativa-2.webp',
+  preloadImage: 'media/regenerativa-1.webp',
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'MedicalProcedure',
+        name: 'Plasma Rico en Plaquetas (PRP)',
+        procedureType: 'https://schema.org/PercutaneousProcedure',
+        bodyLocation: 'Columna vertebral, articulaciones, tendones, ligamentos y músculos',
+        howPerformed: 'Se obtiene de la propia sangre del paciente, concentrando los factores de crecimiento celulares, y se inyecta en la zona afectada guiado por ultrasonido o fluoroscopía.',
+        followup: 'Procedimiento ambulatorio con anestesia local y sedación mínima; recuperación corta.',
+        availableService: { '@id': `${SITE}/#clinica` },
+        url: `${SITE}/medicina-regenerativa.html`,
+      },
+      {
+        '@type': 'MedicalProcedure',
+        name: 'Células Madre de Médula Ósea (BMAC)',
+        procedureType: 'https://schema.org/PercutaneousProcedure',
+        bodyLocation: 'Columna vertebral, articulaciones, huesos, tendones, ligamentos y músculos',
+        howPerformed: 'Se extraen células madre adultas de la médula ósea, generalmente de la cadera, con anestesia local, y se aplican guiadas por ultrasonido o fluoroscopía en la zona a regenerar.',
+        followup: 'Procedimiento ambulatorio; no requiere hospitalización en la mayoría de los casos.',
+        availableService: { '@id': `${SITE}/#clinica` },
+        url: `${SITE}/medicina-regenerativa.html`,
+      },
+      breadcrumbLd('medicina-regenerativa.html', 'Medicina Regenerativa'),
+    ],
+  },
+  body: `${pageHeader(
+    'Medicina Regenerativa: PRP y Células Madre',
+    'Aprovecha el poder natural de tu propio cuerpo para sanar y reparar tejidos dañados. Una alternativa mínimamente invasiva, segura y eficaz para el dolor crónico de origen nervioso, articular o muscular.',
+    'Medicina Regenerativa'
+  )}
+
+        <section class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <div class="reveal">
+                        <h2 class="section-title mb-4">Plasma Rico en Plaquetas (PRP)</h2>
+                        <p class="text-ink-soft mb-4">Es un tratamiento que se obtiene de tu propia sangre, concentrando los factores de crecimiento celulares. Promueve la formación de células sanas, estimula la producción de colágeno, reduce la inflamación y acelera la curación de las partes dañadas de tu cuerpo.</p>
+                        <p class="text-ink-soft">Se utiliza en discos de la columna vertebral, cartílagos articulares desgastados, tendones, ligamentos y músculos de hombros, codos, caderas y rodillas.</p>
+
+                        <h2 class="section-title mt-10 mb-4">Células Madre de Médula Ósea (BMAC)</h2>
+                        <p class="text-ink-soft mb-4">Una terapia avanzada donde se extraen células madre adultas de la médula ósea (generalmente de la cadera) con anestesia local. Estas células tienen una capacidad única para convertirse en el tipo de tejido que tu cuerpo necesita reparar.</p>
+                        <p class="text-ink-soft">Se aplica en discos de la columna vertebral, cartílagos articulares, huesos fracturados, tendones, ligamentos y músculos, promoviendo una regeneración profunda en zonas de desgaste severo.</p>
+                    </div>
+                    <div class="reveal space-y-6">
+                        <img src="media/regenerativa-1.webp" alt="Ilustración médica de regeneración articular con células madre" class="rounded-2xl shadow-xl w-full" width="1200" height="675">
+                        <img src="media/regenerativa-2.webp" alt="Infiltración guiada por imagen en la articulación de la rodilla" class="rounded-2xl shadow-xl w-full" width="1200" height="800">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 bg-beige-50">
+            <div class="container mx-auto px-6 max-w-3xl reveal">
+                <h2 class="section-title mb-6">Qué condiciones tratamos</h2>
+                <ul class="list-disc list-inside space-y-2 text-ink-soft">
+                    <li>Dolor de espalda crónico y hernias de la columna vertebral.</li>
+                    <li>Artrosis y desgaste articular de la columna cervical, dorsal y lumbar, de hombro, codo, rodilla y cadera.</li>
+                    <li>Tendinitis y tendinopatías crónicas: del manguito rotador (hombro), codo de tenista, tendón de Aquiles, entre otras.</li>
+                    <li>Lesiones deportivas con rotura de ligamentos y desgarros musculares.</li>
+                    <li>Fascitis plantar.</li>
+                </ul>
+                <p class="text-ink-soft mt-4">Para la columna en particular, contamos con un <a href="hernia-de-disco.html" class="text-primary font-semibold hover:underline">enfoque combinado con radiofrecuencia y ozonoterapia</a> especialmente diseñado para hernias discales.</p>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl reveal">
+                <h2 class="section-title mb-6">Por qué elegir ViBa para tratarte</h2>
+                ${checkList([
+                  '<strong class="text-ink">Tratamientos 100% de tu propio cuerpo:</strong> usamos tus propias células y sangre, sin riesgo de rechazo o reacciones alérgicas.',
+                  '<strong class="text-ink">Procedimientos ambulatorios:</strong> anestesia local y sedación mínima, con recuperación corta y sin hospitalización en la mayoría de los casos.',
+                  '<strong class="text-ink">Tratamientos personalizados:</strong> evaluamos tu caso para diseñar el protocolo que necesitas según tu problema de salud.',
+                  '<strong class="text-ink">Personal médico certificado:</strong> procedimientos mínimamente invasivos guiados por imágenes de ultrasonido y fluoroscopía (Rayos X) para garantizar la máxima precisión.',
+                ])}
+                <p class="text-ink-soft mt-6">Si ya has probado otros tratamientos y sigues con molestias, o si te dicen que la cirugía es tu única opción, la medicina regenerativa puede ser la alternativa que estás buscando. Trae tus estudios recientes y evaluaremos si eres candidato.</p>
+                ${disclaimer}
+            </div>
+        </section>
+
+${cta(
+  '¿Buscas una alternativa a la cirugía?',
+  'Trae tus estudios y el Dr. Otto Villagrán evaluará si el PRP o las células madre son la mejor opción para tu caso.',
+  'Hola, quisiera información sobre Medicina Regenerativa (PRP / células madre) en ViBa Clínica de Tratamiento del Dolor.'
+)}
+
+${relacionados([
+  ['hernia-de-disco.html', 'Enfoque triple para hernias discales'],
+  ['radiofrecuencia-ozonoterapia.html', 'Radiofrecuencia y ozonoterapia'],
+  ['lumbalgia-ciatica.html', 'Lumbalgia y ciática'],
+  ['tratamientos.html', 'Ver todos nuestros tratamientos'],
 ])}`,
 });
 
@@ -548,9 +696,9 @@ ${cta(
 
 ${relacionados([
   ['hernia-de-disco.html', 'Tratamiento de hernia de disco sin cirugía'],
+  ['medicina-regenerativa.html', 'Medicina Regenerativa: PRP y Células Madre'],
   ['radiofrecuencia-ozonoterapia.html', 'Radiofrecuencia y ozonoterapia'],
   ['blog-espalda-saludable.html', 'Artículo: 10 recomendaciones para una espalda saludable'],
-  ['blog-que-es-el-dolor.html', 'Artículo: ¿Qué es el dolor y cómo se clasifica?'],
 ])}`,
 });
 
@@ -841,6 +989,15 @@ ${relacionados([
 // =====================================================================
 
 const hubCards = [
+  {
+    id: 'medicina-regenerativa',
+    href: 'medicina-regenerativa.html',
+    titulo: 'Medicina Regenerativa',
+    texto: 'PRP y Células Madre de tu propio cuerpo para reparar discos, cartílagos, tendones y ligamentos. Sin riesgo de rechazo, sin cirugía.',
+    img: 'media/regenerativa-1.webp',
+    w: 1200,
+    h: 675,
+  },
   {
     id: 'radiofrecuencia-ozono',
     href: 'radiofrecuencia-ozonoterapia.html',
@@ -1214,7 +1371,7 @@ const sitemapEntries = [
 ];
 
 // Prioridad según la demanda real observada en el informe de búsquedas.
-const prioridadAlta = new Set(['hernia-de-disco.html', 'radiofrecuencia-ozonoterapia.html', 'lumbalgia-ciatica.html', 'tratamientos.html', 'dolor-por-cancer.html', 'blog-cuidados-paliativos.html']);
+const prioridadAlta = new Set(['hernia-de-disco.html', 'medicina-regenerativa.html', 'radiofrecuencia-ozonoterapia.html', 'lumbalgia-ciatica.html', 'tratamientos.html', 'dolor-por-cancer.html', 'blog-cuidados-paliativos.html']);
 for (const e of sitemapEntries) if (prioridadAlta.has(e.loc)) e.priority = '0.9';
 
 // Conserva el lastmod anterior de las URLs que no se tocaron en esta corrida.
