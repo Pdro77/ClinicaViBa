@@ -8,7 +8,7 @@
      npx @tailwindcss/cli -i tailwind.source.css -o tailwind.css --minify
 */
 
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 
 const SITE = 'https://clinicaviba.com';
 const CSS_V = '20260718';
@@ -927,3 +927,55 @@ for (const page of pages) {
   console.log(`✓ ${page.slug}`);
 }
 console.log(`\n${pages.length} páginas generadas.`);
+
+// ---------------------------------------------------------------------
+//  Sitemap
+//  Se genera aquí para que no se desincronice: al añadir una página arriba
+//  entra sola al sitemap. `lastmod` solo se actualiza en las páginas cuyo
+//  contenido cambió, para no decirle a Google que todo el sitio se modificó.
+// ---------------------------------------------------------------------
+
+const hoy = new Date().toISOString().slice(0, 10);
+
+const sitemapEntries = [
+  { loc: '', priority: '1.0', changefreq: 'monthly' },
+  ...pages
+    .filter((p) => p.slug !== 'tratamientos.html')
+    .map((p) => ({ loc: p.slug, priority: '0.8', changefreq: 'monthly' })),
+  { loc: 'tratamientos.html', priority: '0.9', changefreq: 'monthly' },
+  { loc: 'blog-espalda-saludable.html', priority: '0.6', changefreq: 'yearly' },
+  { loc: 'blog-que-es-el-dolor.html', priority: '0.6', changefreq: 'yearly' },
+  { loc: 'blog-discectomia-percutanea.html', priority: '0.6', changefreq: 'yearly' },
+];
+
+// Prioridad más alta para las páginas con mayor demanda de búsqueda.
+const prioridadAlta = new Set(['hernia-de-disco.html', 'radiofrecuencia-ozonoterapia.html', 'lumbalgia-ciatica.html']);
+for (const e of sitemapEntries) if (prioridadAlta.has(e.loc)) e.priority = '0.9';
+
+// Conserva el lastmod anterior de las URLs que no se tocaron en esta corrida.
+const lastmodPrevio = new Map();
+if (existsSync('sitemap.xml')) {
+  const xml = readFileSync('sitemap.xml', 'utf8');
+  const re = /<loc>https:\/\/clinicaviba\.com\/([^<]*)<\/loc>\s*<lastmod>([^<]*)<\/lastmod>/g;
+  let m;
+  while ((m = re.exec(xml))) lastmodPrevio.set(m[1], m[2]);
+}
+const generadasHoy = new Set(pages.map((p) => p.slug));
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapEntries
+  .map(({ loc, priority, changefreq }) => {
+    const lastmod = generadasHoy.has(loc) || loc === '' ? hoy : lastmodPrevio.get(loc) || hoy;
+    return `    <url>
+        <loc>${SITE}/${loc}</loc>
+        <lastmod>${lastmod}</lastmod>
+        <changefreq>${changefreq}</changefreq>
+        <priority>${priority}</priority>
+    </url>`;
+  })
+  .join('\n')}
+</urlset>
+`;
+writeFileSync('sitemap.xml', sitemap);
+console.log(`✓ sitemap.xml (${sitemapEntries.length} URLs, lastmod ${hoy})`);
