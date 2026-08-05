@@ -1,6 +1,12 @@
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Dominio canónico: https://clinicaviba.com (sin www), que es el que declaran
+# las etiquetas canonical, el sitemap y los datos estructurados.
+# Ambas condiciones en una sola regla para resolverlo en un único salto 301
+# (p. ej. http://www.clinicaviba.com/x va directo a https://clinicaviba.com/x).
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://clinicaviba.com%{REQUEST_URI} [L,R=301]
 
 ErrorDocument 404 /404.html
 
