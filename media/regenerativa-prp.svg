@@ -1,0 +1,128 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="prpTitle">
+  <title id="prpTitle">Ilustración del proceso de Plasma Rico en Plaquetas: tubo centrifugado en capas y aplicación guiada en una articulación</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C1425"/>
+      <stop offset="55%" stop-color="#3B0764"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+
+    <linearGradient id="rbc" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9F1246"/>
+      <stop offset="100%" stop-color="#6B0F32"/>
+    </linearGradient>
+
+    <linearGradient id="prp" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F3D27A"/>
+      <stop offset="100%" stop-color="#B7862C"/>
+    </linearGradient>
+
+    <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.16"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F3D27A" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#F3D27A" stop-opacity="0"/>
+    </radialGradient>
+
+    <clipPath id="tubeClip">
+      <rect x="466" y="150" width="120" height="410" rx="60"/>
+    </clipPath>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Formas decorativas suaves -->
+  <circle cx="1040" cy="120" r="180" fill="#FFFFFF" opacity="0.04"/>
+  <circle cx="120" cy="560" r="150" fill="#FFFFFF" opacity="0.045"/>
+  <circle cx="960" cy="560" r="90" fill="#8B5CF6" opacity="0.10"/>
+  <circle cx="180" cy="150" r="70" fill="#F5F3FF" opacity="0.06"/>
+
+  <!-- Resplandor detrás del tubo -->
+  <ellipse cx="526" cy="360" rx="220" ry="260" fill="url(#glow)" opacity="0.35"/>
+
+  <!-- ===================== TUBO DE CENTRIFUGADO ===================== -->
+  <g>
+    <!-- Soporte / base -->
+    <rect x="466" y="592" width="120" height="14" rx="7" fill="#F5F3FF" opacity="0.85"/>
+    <rect x="500" y="560" width="52" height="34" rx="6" fill="#F5F3FF" opacity="0.7"/>
+
+    <!-- Capas de sangre centrifugada, recortadas a la forma del tubo -->
+    <g clip-path="url(#tubeClip)">
+      <rect x="466" y="150" width="120" height="410" fill="#1C1425" opacity="0.25"/>
+      <!-- glóbulos rojos (capa inferior) -->
+      <rect x="466" y="330" width="120" height="230" fill="url(#rbc)"/>
+      <!-- capa leucoplaquetaria (buffy coat) -->
+      <rect x="466" y="318" width="120" height="12" fill="#F3EAD8"/>
+      <!-- plasma rico en plaquetas (capa superior) -->
+      <rect x="466" y="150" width="120" height="168" fill="url(#prp)"/>
+
+      <!-- Plaquetas / partículas dentro del PRP -->
+      <circle cx="498" cy="182" r="4" fill="#FFF6E0" opacity="0.9"/>
+      <circle cx="540" cy="200" r="3" fill="#FFF6E0" opacity="0.8"/>
+      <circle cx="516" cy="228" r="5" fill="#FFF6E0" opacity="0.85"/>
+      <circle cx="560" cy="250" r="3" fill="#FFF6E0" opacity="0.75"/>
+      <circle cx="486" cy="270" r="3.5" fill="#FFF6E0" opacity="0.8"/>
+      <circle cx="530" cy="292" r="4" fill="#FFF6E0" opacity="0.8"/>
+
+      <!-- Reflejo de vidrio -->
+      <rect x="466" y="150" width="120" height="410" fill="url(#glass)"/>
+    </g>
+
+    <!-- Contorno del tubo -->
+    <rect x="466" y="150" width="120" height="410" rx="60" fill="none" stroke="#F5F3FF" stroke-width="3" opacity="0.9"/>
+    <!-- Menisco superior -->
+    <ellipse cx="526" cy="150" rx="60" ry="10" fill="none" stroke="#F5F3FF" stroke-width="2" opacity="0.55"/>
+
+    <!-- Tapa del tubo -->
+    <rect x="486" y="108" width="80" height="46" rx="10" fill="#B7862C"/>
+    <rect x="486" y="108" width="80" height="14" rx="7" fill="#F3D27A"/>
+
+    <!-- Etiquetas de capa -->
+    <g font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#F5F3FF">
+      <text x="616" y="238">Plasma Rico en</text>
+      <text x="616" y="264">Plaquetas (PRP)</text>
+    </g>
+    <line x1="586" y1="230" x2="605" y2="230" stroke="#F3D27A" stroke-width="2"/>
+
+    <g font-family="Inter, sans-serif" font-size="18" fill="#F5F3FF" opacity="0.85">
+      <text x="616" y="440">Glóbulos rojos</text>
+      <text x="616" y="466">(se descartan)</text>
+    </g>
+    <line x1="586" y1="440" x2="605" y2="440" stroke="#F5F3FF" stroke-width="2" opacity="0.7"/>
+  </g>
+
+  <!-- ===================== FLUJO HACIA LA ARTICULACIÓN ===================== -->
+  <path d="M 610 190 C 730 130, 830 150, 900 230" fill="none" stroke="#F3D27A" stroke-width="2.5" stroke-dasharray="2 12" stroke-linecap="round" opacity="0.8"/>
+  <circle cx="900" cy="230" r="5" fill="#F3D27A"/>
+
+  <!-- Jeringa estilizada -->
+  <g transform="translate(845,255) rotate(35)" stroke="#F5F3FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95">
+    <rect x="0" y="0" width="70" height="26" rx="4" fill="#1C1425" fill-opacity="0.25"/>
+    <line x1="0" y1="13" x2="70" y2="13" stroke-width="2" opacity="0.5"/>
+    <rect x="70" y="6" width="16" height="14" fill="#F3D27A" stroke="none"/>
+    <line x1="86" y1="13" x2="122" y2="13"/>
+    <line x1="-14" y1="13" x2="0" y2="13"/>
+    <line x1="-14" y1="2" x2="-14" y2="24"/>
+  </g>
+
+  <!-- ===================== RODILLA / ARTICULACIÓN ===================== -->
+  <g transform="translate(880,340)" stroke="#F5F3FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M40 0 L40 90 C40 130, 10 150, 10 190 L10 260"/>
+    <path d="M160 0 L160 90 C160 130, 190 150, 190 190 L190 260"/>
+    <path d="M10 190 C10 150, 190 150, 190 190" opacity="0.9"/>
+    <circle cx="100" cy="175" r="26" fill="#F3D27A" fill-opacity="0.9" stroke="none"/>
+  </g>
+  <ellipse cx="980" cy="515" rx="220" ry="10" fill="#3B0764" opacity="0.35"/>
+
+  <!-- Partículas doradas dispersas -->
+  <circle cx="700" cy="110" r="4" fill="#F3D27A" opacity="0.7"/>
+  <circle cx="760" cy="90" r="3" fill="#F3D27A" opacity="0.55"/>
+  <circle cx="1020" cy="180" r="4" fill="#F3D27A" opacity="0.5"/>
+  <circle cx="1080" cy="260" r="3" fill="#F3D27A" opacity="0.6"/>
+  <circle cx="700" cy="560" r="4" fill="#F3D27A" opacity="0.5"/>
+</svg>
