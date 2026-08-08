@@ -143,6 +143,8 @@ ${body}
                         <li><a href="medicina-regenerativa.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Medicina Regenerativa</a></li>
                         <li><a href="radiofrecuencia-ozonoterapia.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Radiofrecuencia y Ozono</a></li>
                         <li><a href="lumbalgia-ciatica.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Lumbalgia y Ciática</a></li>
+                        <li><a href="fibromialgia.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Fibromialgia</a></li>
+                        <li><a href="osteoporosis.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Osteoporosis</a></li>
                         <li><a href="tratamientos.html" class="text-white/60 hover:text-white transition-colors inline-block py-2">Ver todos</a></li>
                     </ul>
                 </div>
@@ -369,7 +371,7 @@ ${relacionados([
   ['hernia-de-disco.html', 'Tratamiento de hernia de disco sin cirugía'],
   ['medicina-regenerativa.html', 'Medicina Regenerativa: PRP y Células Madre'],
   ['lumbalgia-ciatica.html', 'Lumbalgia y ciática'],
-  ['neuropatias.html', 'Neuropatías: trigémino, herpes zóster y diabética'],
+  ['osteoporosis.html', 'Osteoporosis'],
 ])}`,
 });
 
@@ -608,7 +610,7 @@ ${cta(
 
 ${relacionados([
   ['hernia-de-disco.html', 'Enfoque triple para hernias discales'],
-  ['radiofrecuencia-ozonoterapia.html', 'Radiofrecuencia y ozonoterapia'],
+  ['osteoporosis.html', 'Osteoporosis'],
   ['lumbalgia-ciatica.html', 'Lumbalgia y ciática'],
   ['tratamientos.html', 'Ver todos nuestros tratamientos'],
 ])}`,
@@ -697,7 +699,7 @@ ${cta(
 ${relacionados([
   ['hernia-de-disco.html', 'Tratamiento de hernia de disco sin cirugía'],
   ['medicina-regenerativa.html', 'Medicina Regenerativa: PRP y Células Madre'],
-  ['radiofrecuencia-ozonoterapia.html', 'Radiofrecuencia y ozonoterapia'],
+  ['blog-discectomia-percutanea.html', 'Artículo: Discectomía percutánea, una alternativa a la cirugía'],
   ['blog-espalda-saludable.html', 'Artículo: 10 recomendaciones para una espalda saludable'],
 ])}`,
 });
@@ -770,10 +772,10 @@ ${cta(
 )}
 
 ${relacionados([
-  ['tratamientos.html', 'Ver todos nuestros tratamientos'],
+  ['medicina-regenerativa.html', 'Medicina Regenerativa: PRP y Células Madre'],
   ['radiofrecuencia-ozonoterapia.html', 'Radiofrecuencia y ozonoterapia'],
-  ['blog-espalda-saludable.html', 'Artículo: 10 recomendaciones para una espalda saludable'],
-  ['index.html#contacto', 'Ubicación, horarios y contacto'],
+  ['hernia-de-disco.html', 'Tratamiento de hernia de disco sin cirugía'],
+  ['tratamientos.html', 'Ver todos nuestros tratamientos'],
 ])}`,
 });
 
@@ -918,7 +920,7 @@ ${cta(
 )}
 
 ${relacionados([
-  ['radiofrecuencia-ozonoterapia.html', 'Radiofrecuencia y ozonoterapia'],
+  ['osteoporosis.html', 'Osteoporosis'],
   ['neuropatias.html', 'Neuropatías: trigémino, herpes zóster y diabética'],
   ['blog-que-es-el-dolor.html', 'Artículo: ¿Qué es el dolor y cómo se clasifica?'],
   ['tratamientos.html', 'Ver todos nuestros tratamientos'],
